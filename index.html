@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifex Health</title>
+  <meta
+    name="description"
+    content="Artifex Health transforms wearable data into actionable insights for sleep, recovery, heart rate, and daily readiness."
+  />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-elevated: rgba(255,255,255,0.06);
+      --card: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.12);
+      --text: #f5f7fb;
+      --muted: #b9c2d0;
+      --accent: #6ee7f9;
+      --accent-2: #8b5cf6;
+      --max: 1120px;
+      --radius: 24px;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(110, 231, 249, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(139, 92, 246, 0.18), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0d1324 45%, #0b1020 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(11, 16, 32, 0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+    .button.primary {
+      color: #08111e;
+      background: linear-gradient(135deg, var(--accent), #b8fff6);
+      box-shadow: 0 12px 30px rgba(110, 231, 249, 0.25);
+    }
+    .button.secondary {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.12);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 72px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin: 18px 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 22px;
+      border-radius: 32px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -25% auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(110,231,249,0.26), transparent 60%);
+      filter: blur(16px);
+    }
+
+    .phone-frame {
+      border-radius: 28px;
+      padding: 12px;
+      background: #060b15;
+      border: 1px solid rgba(255,255,255,0.08);
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .screen {
+      aspect-ratio: 9 / 19.5;
+      border-radius: 20px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 30% 10%, rgba(110,231,249,0.18), transparent 24%),
+        linear-gradient(180deg, #111a31 0%, #0d1324 100%);
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .mini-card {
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+    }
+
+    .bar-row {
+      display: grid;
+      gap: 10px;
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .section {
+      padding: 42px 0;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-header h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 65ch;
+    }
+
+    .mission-card,
+    .feature-card,
+    .contact-card,
+    .privacy-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .mission-card {
+      padding: 28px;
+    }
+
+    .app-grid,
+    .two-up {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-card {
+      padding: 22px;
+    }
+
+    .feature-card h3,
+    .app-copy h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .feature-card p,
+    .app-copy p,
+    .contact-card p,
+    .privacy-card p,
+    .mission-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .app-panel {
+      padding: 24px;
+      display: grid;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .app-copy ul {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .shot {
+      min-height: 164px;
+      border-radius: 20px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)),
+        linear-gradient(180deg, #13203a, #0b1221);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .shot .tiny {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    .shot .tiny.wide { width: 78%; }
+    .shot .tiny.med { width: 54%; }
+    .shot .tiny.short { width: 36%; }
+
+    .form-wrap {
+      padding: 24px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      background: rgba(7,10,18,0.8);
+      color: var(--text);
+      padding: 14px 16px;
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(110,231,249,0.7);
+      box-shadow: 0 0 0 4px rgba(110,231,249,0.12);
+    }
+
+    textarea { min-height: 150px; resize: vertical; }
+
+    .helper {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-card,
+    .privacy-card {
+      padding: 24px;
+    }
+
+    .footer {
+      padding: 24px 0 46px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .app-grid,
+      .two-up,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Artifex Health home">
+        <span class="brand-badge"></span>
+        <span>Artifex Health</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#mission">Mission</a>
+        <a href="#app">Featured App</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#contact">Support</a>
+        <a href="#privacy">Privacy</a>
+      </div>
+
+      <a class="button secondary" href="#app">View App</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Wearable data, made useful</span>
+          <h1>Health insights that actually help you act.</h1>
+          <p>
+            Artifex Health turns sleep, recovery, heart rate, and readiness data into clear,
+            actionable insights so users can better understand how they feel, train, and recover.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://play.google.com/store" target="_blank" rel="noreferrer">Get it on Google Play</a>
+            <a class="button secondary" href="#feedback">Send Feedback</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <div class="phone-frame">
+            <div class="screen">
+              <div class="mini-card">
+                <strong>Readiness</strong>
+                <div style="font-size:2rem; font-weight:800; margin-top:8px;">84</div>
+                <div class="bar-row" style="margin-top:12px;">
+                  <div class="bar"><span style="width:84%"></span></div>
+                </div>
+              </div>
+              <div class="mini-card">
+                <strong>Sleep</strong>
+                <div class="bar-row" style="margin-top:12px;">
+                  <div class="bar"><span style="width:72%"></span></div>
+                  <div class="bar"><span style="width:58%"></span></div>
+                  <div class="bar"><span style="width:81%"></span></div>
+                </div>
+              </div>
+              <div class="mini-card">
+                <strong>Heart Rate Trends</strong>
+                <div style="display:grid; grid-template-columns: repeat(8, 1fr); gap: 8px; align-items:end; height:96px; margin-top:12px;">
+                  <span style="height:42%; background:rgba(110,231,249,0.9); border-radius:999px;"></span>
+                  <span style="height:58%; background:rgba(110,231,249,0.9); border-radius:999px;"></span>
+                  <span style="height:46%; background:rgba(110,231,249,0.9); border-radius:999px;"></span>
+                  <span style="height:72%; background:rgba(110,231,249,0.9); border-radius:999px;"></span>
+                  <span style="height:66%; background:rgba(110,231,249,0.9); border-radius:999px;"></span>
+                  <span style="height:80%; background:rgba(110,231,249,0.9); border-radius:999px;"></span>
+                  <span style="height:62%; background:rgba(110,231,249,0.9); border-radius:999px;"></span>
+                  <span style="height:74%; background:rgba(110,231,249,0.9); border-radius:999px;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our mission</h2>
+          <p>
+            We build health software that makes personal data easier to understand, more useful in daily life,
+            and more actionable for improving sleep, recovery, and performance.
+          </p>
+        </div>
+
+        <div class="mission-card">
+          <p>
+            Artifex Health is designed to transform raw wearable and phone data into meaningful feedback.
+            Instead of overwhelming users with disconnected metrics, the app focuses on context, clarity,
+            and insight—helping people understand what changed, why it matters, and what to do next.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="app" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured app</h2>
+          <p>
+            A clean landing section for your Google Play app listing, screenshots, and product messaging.
+          </p>
+        </div>
+
+        <div class="app-grid">
+          <div class="mission-card app-panel app-copy">
+            <div>
+              <h3>Artifex Health</h3>
+              <p>
+                Artifex Health brings sleep, readiness, activity, and heart rate analytics into one cohesive experience.
+                It turns sensor data into daily insights that help users better understand recovery and performance.
+              </p>
+              <ul>
+                <li>Sleep stage and sleep quality insights</li>
+                <li>Recovery and daily readiness scoring</li>
+                <li>Heart rate and resting trend analysis</li>
+                <li>Health Connect integration for Android</li>
+              </ul>
+            </div>
+            <div>
+              <a class="button primary" href="https://play.google.com/store" target="_blank" rel="noreferrer">Open on Google Play</a>
+            </div>
+          </div>
+
+          <div class="mission-card app-panel">
+            <div class="screenshot-grid" aria-label="App screenshot placeholders">
+              <div class="shot">
+                <strong>Dashboard</strong>
+                <div class="tiny wide"></div>
+                <div class="tiny med"></div>
+                <div class="bar"><span style="width:76%"></span></div>
+              </div>
+              <div class="shot">
+                <strong>Sleep</strong>
+                <div class="tiny wide"></div>
+                <div class="tiny short"></div>
+                <div class="bar"><span style="width:63%"></span></div>
+              </div>
+              <div class="shot">
+                <strong>Recovery</strong>
+                <div class="tiny med"></div>
+                <div class="tiny short"></div>
+                <div class="bar"><span style="width:82%"></span></div>
+              </div>
+              <div class="shot">
+                <strong>Heart Rate</strong>
+                <div class="tiny wide"></div>
+                <div class="tiny med"></div>
+                <div class="bar"><span style="width:69%"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Key product highlights</h2>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Sleep Intelligence</h3>
+            <p>Give users better context around nightly sleep structure, duration, and recovery quality.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Readiness Scoring</h3>
+            <p>Show a concise daily signal that helps users decide whether to push, maintain, or recover.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Heart Rate Trends</h3>
+            <p>Surface patterns in resting heart rate and recovery indicators with clean visual feedback.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Actionable Insight</h3>
+            <p>Translate raw health data into useful takeaways instead of overwhelming users with numbers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback" class="section">
+      <div class="container two-up">
+        <div>
+          <div class="section-header">
+            <h2>Feedback & feature requests</h2>
+            <p>
+              Collect app feedback, feature ideas, bug reports, or early user suggestions.
+              This starter version uses Formspree, which you can swap for any form backend later.
+            </p>
+          </div>
+          <div class="privacy-card">
+            <p>
+              Replace the form action URL with your own Formspree endpoint, Tally form, Google Form,
+              or serverless function when you’re ready to receive submissions.
+            </p>
+          </div>
+        </div>
+
+        <div class="mission-card form-wrap">
+          <form action="https://formspree.io/f/your-form-id" method="POST">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Optional" />
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+
+            <label>
+              Message
+              <textarea name="message" placeholder="Feature idea, feedback, or bug report" required></textarea>
+            </label>
+
+            <button class="button primary" type="submit">Submit</button>
+            <div class="helper">You can also replace this with a mailto link or embedded Google Form.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container two-up">
+        <div class="contact-card">
+          <h3>Support</h3>
+          <p>
+            For app support, bug reports, or general questions, reach out at
+            <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>.
+          </p>
+        </div>
+
+        <div id="privacy" class="privacy-card">
+          <h3>Privacy Policy</h3>
+          <p>
+            Create a separate <code>privacy.html</code> page or link to your hosted privacy policy here.
+            Google Play expects a working privacy policy URL for apps that handle user data.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-line">
+      <span>© 2026 Artifex Health LLC</span>
+      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="mailto:support@yourdomain.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
