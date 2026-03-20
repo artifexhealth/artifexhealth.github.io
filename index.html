@@ -605,24 +605,19 @@
         </div>
 
         <div class="mission-card form-wrap">
-          <form action="https://formspree.io/f/your-form-id" method="POST">
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Optional" />
-            </label>
+          <form action="mailto:artifexhealth@kossapplications.app" method="post" enctype="text/plain">
+  <label>
+    Email
+    <input type="email" name="email" placeholder="you@example.com" required />
+  </label>
 
-            <label>
-              Email
-              <input type="email" name="email" placeholder="you@example.com" required />
-            </label>
+  <label>
+    Message
+    <textarea name="message" placeholder="Feature idea, feedback, or bug report" required></textarea>
+  </label>
 
-            <label>
-              Message
-              <textarea name="message" placeholder="Feature idea, feedback, or bug report" required></textarea>
-            </label>
-
-            <button class="button primary" type="submit">Submit</button>
-          </form>
+  <button class="button primary" type="submit">Submit</button>
+</form>
         </div>
       </div>
     </section>
