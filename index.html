@@ -327,17 +327,25 @@
     }
 
     .shot {
-      min-height: 164px;
-      border-radius: 20px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)),
-        linear-gradient(180deg, #13203a, #0b1221);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 14px;
-      display: grid;
-      gap: 10px;
-      align-content: start;
-    }
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  aspect-ratio: 9 / 16;
+  display: block;
+  padding: 0;
+}
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+    .shot:hover img {
+  transform: scale(1.03);
+}
 
     .shot .tiny {
       height: 8px;
@@ -533,35 +541,26 @@
           </div>
 
           <div class="mission-card app-panel">
-            <div class="screenshot-grid" aria-label="App screenshot placeholders">
-              <div class="shot">
-                <strong>Dashboard</strong>
-                <div class="tiny wide"></div>
-                <div class="tiny med"></div>
-                <div class="bar"><span style="width:76%"></span></div>
-              </div>
-              <div class="shot">
-                <strong>Sleep</strong>
-                <div class="tiny wide"></div>
-                <div class="tiny short"></div>
-                <div class="bar"><span style="width:63%"></span></div>
-              </div>
-              <div class="shot">
-                <strong>Recovery</strong>
-                <div class="tiny med"></div>
-                <div class="tiny short"></div>
-                <div class="bar"><span style="width:82%"></span></div>
-              </div>
-              <div class="shot">
-                <strong>Heart Rate</strong>
-                <div class="tiny wide"></div>
-                <div class="tiny med"></div>
-                <div class="bar"><span style="width:69%"></span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="screenshot-grid" aria-label="App screenshots">
+
+    <div class="shot">
+      <img src="Play%20store%20and%20website%20images/Energy%20Trend.jpg" alt="Energy Trend screen" />
+    </div>
+
+    <div class="shot">
+      <img src="Play%20store%20and%20website%20images/Light%20Sleep.jpg" alt="Light Sleep screen" />
+    </div>
+
+    <div class="shot">
+      <img src="Play%20store%20and%20website%20images/Energy%20Bank.jpg" alt="Energy Bank screen" />
+    </div>
+
+    <div class="shot">
+      <img src="Play%20store%20and%20website%20images/Arti%20Chat.jpg" alt="Arti Chat screen" />
+    </div>
+
+  </div>
+</div>
     </section>
 
     <section class="section">
