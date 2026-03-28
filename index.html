@@ -9,6 +9,80 @@
     content="Artifex Health translates your health data into meaningful insights, helping you understand your sleep, activity, and readiness at a glance so you can feel your best."
   />
   <style>
+
+    .lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 18, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.lightbox-arrow.left {
+  left: 24px;
+}
+
+.lightbox-arrow.right {
+  right: 24px;
+}
+
+.lightbox-arrow:hover {
+  background: rgba(255,255,255,0.18);
+}
     :root {
       --bg: #0b1020;
       --bg-elevated: rgba(255,255,255,0.06);
@@ -346,6 +420,9 @@
     .shot:hover img {
   transform: scale(1.03);
 }
+    .shot img {
+  cursor: pointer;
+}
 
     .shot .tiny {
       height: 8px;
@@ -432,7 +509,17 @@
     }
   </style>
 </head>
+  
 <body>
+  <div id="lightbox" class="lightbox">
+  <button class="lightbox-close">&times;</button>
+
+  <button class="lightbox-arrow left">&#10094;</button>
+  
+  <img class="lightbox-image" src="" alt="Expanded screenshot" />
+  
+  <button class="lightbox-arrow right">&#10095;</button>
+</div>
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Artifex Health home">
@@ -655,7 +742,7 @@
             Your privacy and safety is most important to us. View our Privacy Policy to see how we handle your data.
           </p>
           <p>
-            <a Read our href="/PRIVACY_POLICY.html">Privacy Policy here.</a>
+            <a href="/PRIVACY_POLICY.html">Read our Privacy Policy by clicking here.</a>
           </p>
         </div>
       </div>
@@ -671,5 +758,59 @@
       </div>
     </div>
   </footer>
+
+          <script>
+  const shots = document.querySelectorAll('.shot img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-image');
+  const closeBtn = document.querySelector('.lightbox-close');
+  const prevBtn = document.querySelector('.lightbox-arrow.left');
+  const nextBtn = document.querySelector('.lightbox-arrow.right');
+
+  let currentIndex = 0;
+  const images = Array.from(shots);
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex].src;
+    lightbox.classList.add('active');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+
+  // Close when clicking background
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+  });
+</script>
 </body>
 </html>
