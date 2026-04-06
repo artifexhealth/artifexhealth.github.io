@@ -12,13 +12,33 @@ user health databases.</p>
 insights, dashboard metrics, and personalized wellness analysis:</p>
 <ul>
 <li><ul>
-<li><strong>Health and Fitness Data (via Health Connect):</strong>
-Health Connect is an Android health data platform developed by Google
-that allows you to control how health data is shared between apps. We
-request read-only access to health and activity data you authorize,
-which may include Heart Rate, Heart Rate Variability (HRV), Steps,
-Active Calories, Sleep Sessions (including stages), SpO2, Resting Heart
-Rate, Respiratory Rate, and Exercise Sessions.</li>
+<li>
+  <strong>Health and Fitness Data (via Health Connect):</strong>
+  Health Connect is an Android health data platform developed by Google
+  that allows you to control how health data is shared between apps. We
+  request read-only access to health and activity data you authorize,
+  which may include Heart Rate, Heart Rate Variability (HRV), Steps,
+  Active Calories, Sleep Sessions (including stages), SpO2, Resting Heart
+  Rate, Respiratory Rate, Exercise Sessions, and body composition metrics
+  such as Weight, Body Fat Percentage, Lean Body Mass, Bone Mass, and
+  Body Water Mass.
+</li>
+  <li>
+  <strong>Body Composition Data (Manual Entry and Connected Sources):</strong>
+  In addition to Health Connect, the App allows you to manually enter body
+  composition data such as weight, body fat percentage, lean body mass,
+  bone mass, and body water mass. This data is used to provide charts,
+  trends, and comparative insights to help you track changes in body
+  composition over time.
+</li>
+  <li>
+  <strong>Blood Test and Lab Results (Manual Entry):</strong>
+  The App allows you to manually input blood test and laboratory results
+  (for example, cholesterol markers, glucose levels, or other health
+  biomarkers). This data is used to generate visualizations such as
+  charts and trends, as well as AI-powered insights to help you better
+  understand your health metrics.
+</li>
 </ul></li>
 <li><strong>User Profile:</strong> We store profile information such as
 your name, age, gender, height, and weight to personalize health
@@ -32,7 +52,8 @@ quality.</li>
 <p><strong>Purpose:</strong> This data is used solely to generate your
 health dashboard, calculate wellness and readiness metrics, surface
 trends, and provide AI-driven health and wellness insights within the
-App.</p>
+App. This may include body composition tracking and interpretation of manually
+entered lab results.</p>
 <p>We do <strong>not</strong> use Health Connect data for advertising,
 marketing profiling, or sale to data brokers.</p>
 <hr />
@@ -48,9 +69,10 @@ information, and locally stored app records are encrypted at rest using
 managed through the <strong>Android Keystore System</strong>, helping
 ensure that keys remain protected by device-level security and do not
 leave the secure environment of your device.</li>
-<li><strong>Encrypted Local Storage:</strong> User information is stored
-locally in encrypted app storage rather than in Artifex Health-operated
-cloud databases.</li>
+<li><strong>Encrypted Local Storage:</strong> Health data, including body
+composition metrics and manually entered blood test results, as well as
+user profile and app data, are stored locally in encrypted app storage
+rather than in Artifex Health operated cloud databases.</li>
 <li><strong>No App-Operated Cloud Storage:</strong> We do not maintain
 our own servers or databases to store your health records. If you lose
 your phone and do not have a device-level backup, we may not be able to
@@ -83,6 +105,10 @@ processing may include a summarized and structured snapshot of your
 recent health metrics, trends, context tags, and, where needed for
 better insight quality, selected raw health data points or short
 time-series segments.</li>
+  <li>
+  This may include body composition data and manually entered blood test
+  results where relevant to the requested insight.
+</li>
 <li><strong>Data Minimization:</strong> We try to limit cloud-shared
 data to what is reasonably necessary for the requested feature.</li>
 <li><strong>Data Protection:</strong> Data sent for cloud AI processing
