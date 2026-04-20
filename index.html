@@ -98,6 +98,100 @@
       --shadow: 0 20px 60px rgba(0,0,0,0.35);
     }
 
+    /* --- Highlight Sections --- */
+.highlight-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.highlight-text {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.highlight-text h3 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.highlight-text p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.highlight-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Base style for phone frames */
+.media-frame {
+  border-radius: 24px;
+  background: #060b15;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  aspect-ratio: 9 / 19;
+}
+
+/* Side Images: Slightly smaller, pushed back */
+.media-side {
+  flex: 1;
+  max-width: 240px;
+  opacity: 0.7;
+  transform: scale(0.92);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.media-side:hover {
+  opacity: 1;
+  transform: scale(0.95);
+}
+
+/* Center Video: Elevated and highlighted */
+.media-center {
+  flex: 1.2;
+  max-width: 290px;
+  z-index: 2;
+  transform: translateY(-30px);
+  border-color: rgba(110,231,249,0.3); 
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 40px rgba(110, 231, 249, 0.1);
+}
+
+.media-frame img,
+.media-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 850px) {
+  .highlight-media {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .media-center {
+    transform: translateY(0);
+    order: -1;
+    max-width: 320px;
+  }
+  
+  .media-side {
+    transform: scale(1);
+    opacity: 1;
+    max-width: 320px;
+  }
+}
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -657,24 +751,52 @@
           <h2>Key product highlights</h2>
         </div>
 
-        <div class="feature-grid">
-          <div class="feature-card">
-            <h3>Sleep Intelligence</h3>
-            <p>Give users better context around nightly sleep structure, duration, and recovery quality.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Readiness Scoring</h3>
-            <p>Show a concise daily signal that helps users decide whether to push, maintain, or recover.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Activity Scoring</h3>
-            <p>Understand how your daily movement stacks up with a simple score that encourages consistency and balance.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Actionable Insight</h3>
-            <p>Translate raw health data into useful takeaways instead of overwhelming users with numbers.</p>
-          </div>
-        </div>
+        <div class="highlight-section">
+  <div class="highlight-text">
+    <h3>Sleep Intelligence</h3>
+    <p>Give users better context around nightly sleep structure, duration, and recovery quality so you can understand what happened while you were resting.</p>
+  </div>
+  
+  <div class="highlight-media">
+    <div class="media-frame media-side">
+      <img src="Play store and website images/Light Sleep.jpg" alt="Sleep Stages" />
+    </div>
+    
+    <div class="media-frame media-center">
+      <video autoplay loop muted playsinline>
+        <source src="your-sleep-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    
+    <div class="media-frame media-side">
+      <img src="Play store and website images/Energy Bank.jpg" alt="Sleep Score" />
+    </div>
+  </div>
+</div>
+
+<div class="highlight-section">
+  <div class="highlight-text">
+    <h3>Readiness Scoring</h3>
+    <p>Show a concise daily signal that helps users decide whether to push, maintain, or recover based on overnight recovery and previous exertion.</p>
+  </div>
+  
+  <div class="highlight-media">
+    <div class="media-frame media-side">
+      <img src="Play store and website images/Energy Trend.jpg" alt="Energy Trend" />
+    </div>
+    
+    <div class="media-frame media-center">
+      <video autoplay loop muted playsinline>
+        <source src="your-readiness-video.mp4" type="video/mp4" />
+      </video>
+    </div>
+    
+    <div class="media-frame media-side">
+      <img src="Play store and website images/Arti Chat.jpg" alt="Readiness Insight" />
+    </div>
+  </div>
+</div>
       </div>
     </section>
 
