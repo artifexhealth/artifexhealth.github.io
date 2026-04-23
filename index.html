@@ -170,6 +170,13 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.media-frame:hover img,
+.media-frame:hover video {
+  transform: scale(1.03);
 }
 
 /* Mobile Responsiveness */
@@ -608,10 +615,11 @@
 <body>
   <div id="lightbox" class="lightbox">
   <button class="lightbox-close">&times;</button>
-
   <button class="lightbox-arrow left">&#10094;</button>
   
-  <img class="lightbox-image" src="" alt="Expanded screenshot" />
+  <img id="lightbox-img" class="lightbox-image" src="" alt="Expanded media" style="display: none;" />
+  
+  <video id="lightbox-vid" class="lightbox-image" autoplay loop muted playsinline style="display: none;"></video>
   
   <button class="lightbox-arrow right">&#10095;</button>
 </div>
@@ -931,51 +939,73 @@
     </div>
   </footer>
 
-          <script>
-  const shots = document.querySelectorAll('.shot img');
+  <script>
+    
+  const mediaElements = document.querySelectorAll('.shot img, .media-frame img, .media-frame video');
+    
   const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.querySelector('.lightbox-image');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxVid = document.getElementById('lightbox-vid');
   const closeBtn = document.querySelector('.lightbox-close');
   const prevBtn = document.querySelector('.lightbox-arrow.left');
   const nextBtn = document.querySelector('.lightbox-arrow.right');
 
   let currentIndex = 0;
-  const images = Array.from(shots);
+  const mediaArray = Array.from(mediaElements);
+
+  function updateLightboxMedia(index) {
+    const media = mediaArray[index];
+    const isVideo = media.tagName.toLowerCase() === 'video';
+
+    if (isVideo) {
+      lightboxImg.style.display = 'none';
+      lightboxVid.style.display = 'block';
+      
+      const sourceElement = media.querySelector('source');
+      lightboxVid.src = sourceElement ? sourceElement.src : media.src;
+      lightboxVid.play();
+    } else {
+      lightboxVid.style.display = 'none';
+      lightboxVid.pause();
+      
+      lightboxImg.style.display = 'block';
+      lightboxImg.src = media.src;
+    }
+  }
 
   function openLightbox(index) {
     currentIndex = index;
-    lightboxImg.src = images[currentIndex].src;
+    updateLightboxMedia(currentIndex);
     lightbox.classList.add('active');
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
+    lightboxVid.pause();
   }
 
   function showNext() {
-    currentIndex = (currentIndex + 1) % images.length;
-    lightboxImg.src = images[currentIndex].src;
+    currentIndex = (currentIndex + 1) % mediaArray.length;
+    updateLightboxMedia(currentIndex);
   }
 
   function showPrev() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    lightboxImg.src = images[currentIndex].src;
+    currentIndex = (currentIndex - 1 + mediaArray.length) % mediaArray.length;
+    updateLightboxMedia(currentIndex);
   }
 
-  images.forEach((img, index) => {
-    img.addEventListener('click', () => openLightbox(index));
+  mediaArray.forEach((media, index) => {
+    media.addEventListener('click', () => openLightbox(index));
   });
 
   closeBtn.addEventListener('click', closeLightbox);
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
 
-  // Close when clicking background
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
 
-  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
 
