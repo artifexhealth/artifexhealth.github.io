@@ -2,223 +2,92 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18071824870"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18071824870"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18071824870');
+  </script>
 
-  gtag('config', 'AW-18071824870');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artifex Health</title>
+  <title>Koss Applications — Software that turns complexity into clarity</title>
   <link rel="icon" type="image/png" href="ArtifexHealth_Artifex_Icon_1.png">
   <meta
     name="description"
-    content="Artifex Health translates your health data into meaningful insights, helping you understand your sleep, activity, and readiness at a glance so you can feel your best."
+    content="Koss Applications builds tools that translate complexity into clarity — from health data with Artifex Health to AI prompt optimization with Mycelio."
   />
+  <meta property="og:title" content="Koss Applications" />
+  <meta property="og:description" content="Software that turns complexity into clarity." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="ArtifexHealth_Artifex_Icon_1.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
   <style>
-
-    .lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(5, 8, 18, 0.85);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-
-.lightbox.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.lightbox-image {
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 20px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-  animation: zoomIn 0.25s ease;
-}
-
-@keyframes zoomIn {
-  from {
-    transform: scale(0.92);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 28px;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.lightbox-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.5rem;
-  background: rgba(255,255,255,0.08);
-  border: none;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.lightbox-arrow.left {
-  left: 24px;
-}
-
-.lightbox-arrow.right {
-  right: 24px;
-}
-
-.lightbox-arrow:hover {
-  background: rgba(255,255,255,0.18);
-}
     :root {
-      --bg: #0b1020;
-      --bg-elevated: rgba(255,255,255,0.06);
-      --card: rgba(255,255,255,0.08);
-      --border: rgba(255,255,255,0.12);
+      --bg-0: #06080f;
+      --bg-1: #0a0e1c;
+      --bg-2: #10162a;
+      --card: rgba(255,255,255,0.045);
+      --card-hover: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.09);
+      --border-strong: rgba(255,255,255,0.16);
       --text: #f5f7fb;
-      --muted: #b9c2d0;
+      --muted: #9aa6bd;
+      --muted-2: #6e7891;
       --accent: #6ee7f9;
       --accent-2: #8b5cf6;
-      --max: 1120px;
-      --radius: 24px;
-      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --accent-warm: #ffb86b;
+      --max: 1180px;
+      --radius: 22px;
+      --radius-lg: 28px;
+      --shadow-sm: 0 4px 16px rgba(0,0,0,0.25);
+      --shadow: 0 24px 60px rgba(0,0,0,0.4);
+      --shadow-lg: 0 40px 100px rgba(0,0,0,0.55);
+      --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
     }
-
-    /* --- Highlight Sections --- */
-.highlight-section {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.highlight-text {
-  max-width: 600px;
-  margin: 0 auto 40px;
-}
-
-.highlight-text h3 {
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
-  margin: 0 0 12px;
-  letter-spacing: -0.02em;
-}
-
-.highlight-text p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  margin: 0;
-}
-
-.highlight-media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Base style for phone frames */
-.media-frame {
-  border-radius: 24px;
-  background: #060b15;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  aspect-ratio: 9 / 19;
-}
-
-/* Side Images: Slightly smaller, pushed back */
-.media-side {
-  flex: 1;
-  max-width: 240px;
-  opacity: 0.7;
-  transform: scale(0.92);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.media-side:hover {
-  opacity: 1;
-  transform: scale(0.95);
-}
-
-/* Center Video: Elevated and highlighted */
-.media-center {
-  flex: 1.2;
-  max-width: 290px;
-  z-index: 2;
-  transform: translateY(-30px);
-  border-color: rgba(110,231,249,0.3); 
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 40px rgba(110, 231, 249, 0.1);
-}
-
-.media-frame img,
-.media-frame video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-}
-
-.media-frame:hover img,
-.media-frame:hover video {
-  transform: scale(1.03);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 850px) {
-  .highlight-media {
-    flex-direction: column;
-    gap: 24px;
-  }
-  
-  .media-center {
-    transform: translateY(0);
-    order: -1;
-    max-width: 320px;
-  }
-  
-  .media-side {
-    transform: scale(1);
-    opacity: 1;
-    max-width: 320px;
-  }
-}
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
+      background: var(--bg-0);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Layered ambient background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
       background:
-        radial-gradient(circle at top left, rgba(110, 231, 249, 0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(139, 92, 246, 0.18), transparent 24%),
-        linear-gradient(180deg, #09101d 0%, #0d1324 45%, #0b1020 100%);
-      line-height: 1.6;
+        radial-gradient(60% 50% at 15% 0%, rgba(110, 231, 249, 0.18), transparent 60%),
+        radial-gradient(50% 50% at 85% 10%, rgba(139, 92, 246, 0.22), transparent 60%),
+        radial-gradient(40% 40% at 50% 100%, rgba(110, 231, 249, 0.10), transparent 60%),
+        linear-gradient(180deg, #070b18 0%, #0a0f1f 45%, #06080f 100%);
+    }
+    /* Grain overlay */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.5;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
     }
 
     a { color: inherit; text-decoration: none; }
@@ -229,478 +98,1262 @@
       margin: 0 auto;
     }
 
+    /* ---------- Typography ---------- */
+    .display {
+      font-size: clamp(2.8rem, 7.2vw, 5.6rem);
+      line-height: 1.0;
+      letter-spacing: -0.045em;
+      font-weight: 700;
+      margin: 0;
+    }
+    .display em {
+      font-style: italic;
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #e7f7ff;
+    }
+    .display em.warm {
+      background: linear-gradient(135deg, var(--accent), #d4baff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin: 0 0 12px;
+      font-weight: 700;
+    }
+    h2 em {
+      font-style: italic;
+      font-family: var(--serif);
+      font-weight: 400;
+      color: #e7f7ff;
+    }
+    h3 { margin: 0; letter-spacing: -0.01em; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .lede {
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 1.12rem;
+      margin: 22px 0 32px;
+    }
+
+    /* ---------- Nav ---------- */
     .nav {
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(12px);
-      background: rgba(11, 16, 32, 0.75);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      background: rgba(8, 11, 22, 0.65);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 0;
+      padding: 14px 0;
       gap: 16px;
     }
-
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
+      gap: 11px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      font-size: 1rem;
+      cursor: pointer;
     }
-
-    .brand-logo {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.55), transparent 55%),
+        linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 6px 18px rgba(110,231,249,0.25), inset 0 1px 0 rgba(255,255,255,0.3);
     }
-
-    .brand-text {
-      height: 23px;
-      object-fit: contain;
-    }
-
-    .app-logo {
-      display: block;
-      margin: 0 auto 12px auto;
-      max-width: 220px;
-      height: auto;
-    }
-
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 4px;
+    }
+    .nav-link {
       color: var(--muted);
-      font-size: 0.95rem;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      background: none;
+      font: inherit;
+      font-size: 0.92rem;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+    }
+    .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+    .nav-link.active {
+      color: var(--text);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.12);
     }
 
+    /* ---------- Buttons ---------- */
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       min-height: 48px;
-      padding: 0 20px;
+      padding: 0 22px;
       border-radius: 999px;
       border: 1px solid transparent;
       font-weight: 600;
-      transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+      font-size: 0.95rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s, border-color 0.2s;
+      position: relative;
+      isolation: isolate;
     }
-
     .button:hover { transform: translateY(-1px); }
     .button.primary {
-      color: #08111e;
-      background: linear-gradient(135deg, var(--accent), #b8fff6);
-      box-shadow: 0 12px 30px rgba(110, 231, 249, 0.25);
+      color: #07101c;
+      background: linear-gradient(135deg, #b8fff6 0%, var(--accent) 50%, #a3d8ff 100%);
+      box-shadow:
+        0 10px 30px rgba(110, 231, 249, 0.30),
+        inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+    .button.primary:hover {
+      box-shadow:
+        0 14px 42px rgba(110, 231, 249, 0.42),
+        inset 0 1px 0 rgba(255,255,255,0.6);
     }
     .button.secondary {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.04);
       border-color: rgba(255,255,255,0.12);
       color: var(--text);
     }
-
-    .hero {
-      padding: 72px 0 28px;
+    .button.secondary:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.2);
     }
+    .button .arrow { transition: transform 0.2s ease; }
+    .button:hover .arrow { transform: translateX(3px); }
 
+    /* ---------- Views ---------- */
+    .view { display: none; }
+    .view.active { display: block; }
+
+    section.section {
+      padding: 64px 0;
+    }
+    section.section.tight { padding: 36px 0; }
+
+    /* ---------- Hero (Overview) ---------- */
+    .hero {
+      padding: 90px 0 60px;
+      position: relative;
+    }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 32px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
       align-items: center;
     }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2.6rem, 7vw, 5rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-    }
-
-    .hero p {
-      max-width: 60ch;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin: 18px 0 28px;
-    }
-
     .hero-actions {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .trust-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted-2);
+      font-size: 0.85rem;
+      margin-top: 28px;
+    }
+    .trust-row .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--muted-2);
     }
 
-    .hero-card {
+    /* Stacked phones */
+    .phones-stage {
       position: relative;
-      padding: 22px;
-      border-radius: 32px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: var(--shadow);
-      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      max-width: 520px;
+      margin: 0 auto;
     }
-
-    .hero-card::before {
+    .phones-stage::before {
       content: "";
       position: absolute;
-      inset: auto -10% -25% auto;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(110,231,249,0.26), transparent 60%);
-      filter: blur(16px);
+      inset: 8% 12%;
+      background: radial-gradient(circle, rgba(110,231,249,0.25), transparent 60%);
+      filter: blur(40px);
+      z-index: 0;
     }
-
-    .phone-frame {
-  border-radius: 28px;
-  padding: 12px; /* slightly tighter */
-  background: #060b15;
-  border: 1px solid rgba(255,255,255,0.08);
-  max-width: 300px; /* 👈 reduced from 300px */
-  margin: 0 auto;
-}
-
-    .screen {
-      aspect-ratio: 9 / 17;
-      border-radius: 20px;
+    .phones-stage::after {
+      content: "";
+      position: absolute;
+      inset: 14% 0 0 0;
+      background: radial-gradient(circle, rgba(139,92,246,0.22), transparent 60%);
+      filter: blur(48px);
+      z-index: 0;
+    }
+    .phone-mock {
+      position: absolute;
+      width: 56%;
+      border-radius: 32px;
+      padding: 10px;
+      background: linear-gradient(180deg, #1b2236 0%, #0a0e1c 100%);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow:
+        0 50px 100px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(255,255,255,0.04),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .phone-mock .screen {
+      aspect-ratio: 9 / 19;
+      border-radius: 22px;
       overflow: hidden;
-      background:
-        radial-gradient(circle at 30% 10%, rgba(110,231,249,0.18), transparent 24%),
-        linear-gradient(180deg, #111a31 0%, #0d1324 100%);
-      padding: 18px;
-      display: grid;
-      gap: 14px;
+      background: #0a0f1f;
     }
-
-  .screen {
-  aspect-ratio: 9 / 17.7;
-  border-radius: 20px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 30% 10%, rgba(110,231,249,0.18), transparent 24%),
-    linear-gradient(180deg, #111a31 0%, #0d1324 100%);
-  padding: 0; /* remove padding so image truly fills */
-  display: block; /* no need for grid anymore */
-}
-
-    .mini-card {
-      border-radius: 18px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 16px;
-    }
-
-    .bar-row {
-      display: grid;
-      gap: 10px;
-    }
-
-    .bar {
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      overflow: hidden;
-    }
-
-    .bar > span {
-      display: block;
+    .phone-mock .screen img {
+      width: 100%;
       height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      object-fit: cover;
+    }
+    .phone-mock.front .screen img {
+      object-fit: contain;
+      object-position: center;
+      background: #0a0f1f;
+    }
+    .phone-mock.front {
+      left: 8%;
+      bottom: 4%;
+      z-index: 2;
+      transform: rotate(-5deg);
+      animation: float-a 8s ease-in-out infinite;
+    }
+    .phone-mock.back {
+      right: 4%;
+      top: 2%;
+      z-index: 1;
+      transform: rotate(7deg);
+      opacity: 0.95;
+      animation: float-b 9s ease-in-out infinite;
+    }
+    .phone-mock.back .screen {
+      display: block;
+      background: #06030d;
+    }
+    .phone-mock.back .screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(2.2);
+      transform-origin: 50% 60%;
+      filter: none;
+    }
+    .mycelio-glyph {
+      font-family: var(--serif);
+      font-size: clamp(4rem, 10vw, 7rem);
+      line-height: 1;
+      font-style: italic;
+      background: linear-gradient(135deg, #ffffff, #d4baff 70%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 6px 30px rgba(139,92,246,0.5));
     }
 
-    .section {
-      padding: 42px 0;
+    @keyframes float-a {
+      0%, 100% { transform: rotate(-5deg) translateY(0); }
+      50% { transform: rotate(-5deg) translateY(-10px); }
+    }
+    @keyframes float-b {
+      0%, 100% { transform: rotate(7deg) translateY(0); }
+      50% { transform: rotate(7deg) translateY(-14px); }
     }
 
-    .section-header {
-      margin-bottom: 24px;
-    }
-
-    .section-header h2 {
-      margin: 0 0 10px;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-    }
-
-    .section-header p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 65ch;
-    }
-
-    .mission-card,
-    .feature-card,
-    .contact-card,
-    .privacy-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .mission-card {
-      padding: 28px;
-    }
-
-    .app-grid,
-    .two-up {
+    /* ---------- Overview: app tiles ---------- */
+    .apps-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
+      gap: 22px;
     }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+    .app-tile {
+      position: relative;
+      display: flex;
+      flex-direction: column;
       gap: 18px;
+      padding: 28px 28px 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      text-align: left;
+      color: inherit;
+      overflow: hidden;
+      isolation: isolate;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      font: inherit;
     }
-
-    .feature-card {
-      padding: 22px;
+    .app-tile::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(110,231,249,0.0), rgba(110,231,249,0.0));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+      transition: background 0.3s ease;
     }
-
-    .feature-card h3,
-    .app-copy h3 {
-      margin: 0 0 8px;
-      font-size: 1.1rem;
+    .app-tile:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.18);
+      box-shadow: var(--shadow-lg);
     }
+    .app-tile:hover::before {
+      background: linear-gradient(135deg, rgba(110,231,249,0.5), rgba(139,92,246,0.5));
+    }
+    .app-tile-glow {
+      position: absolute;
+      inset: auto -20% -40% auto;
+      width: 70%;
+      aspect-ratio: 1;
+      background: radial-gradient(circle, rgba(110,231,249,0.18), transparent 60%);
+      filter: blur(24px);
+      z-index: -1;
+      transition: opacity 0.3s;
+      opacity: 0.7;
+    }
+    .app-tile.mycelio .app-tile-glow {
+      background: radial-gradient(circle, rgba(139,92,246,0.22), transparent 60%);
+    }
+    .app-tile:hover .app-tile-glow { opacity: 1; }
 
-    .feature-card p,
-    .app-copy p,
-    .contact-card p,
-    .privacy-card p,
-    .mission-card p {
+    .app-tile-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .app-tile-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 16px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 6px;
+      flex-shrink: 0;
+    }
+    .app-tile-icon.mycelio-mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 50% 60%, rgba(139,92,246,0.45), transparent 65%),
+        linear-gradient(135deg, #1a1230, #0c0a1c);
+      border: 1px solid rgba(139,92,246,0.3);
+      padding: 8px;
+      box-shadow: 0 6px 18px rgba(139,92,246,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .app-tile-icon.mycelio-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(255, 230, 200, 0.25));
+    }
+    .app-tile h3 {
+      margin: 0;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .app-tile-tag {
+      font-size: 0.78rem;
+      color: var(--muted-2);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .app-tile p {
       margin: 0;
       color: var(--muted);
+      font-size: 1rem;
     }
-
-    .app-panel {
-      padding: 24px;
-      display: grid;
-      gap: 20px;
+    .app-tile-preview {
+      margin-top: 4px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+      aspect-ratio: 16 / 10;
+      background: #0a0f1f;
+    }
+    .app-tile-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.5s ease;
+    }
+    .app-tile:hover .app-tile-preview img { transform: scale(1.04); }
+    .app-tile-preview.mycelio {
+      display: flex;
       align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 50% 60%, rgba(139,92,246,0.5), transparent 60%),
+        radial-gradient(circle at 50% 40%, rgba(110,231,249,0.18), transparent 65%),
+        linear-gradient(160deg, #1a1230 0%, #0c0a1c 100%);
     }
-
-    .app-copy ul {
-      margin: 18px 0 0;
-      padding-left: 18px;
+    .app-tile-preview.mycelio img {
+      width: 55%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 24px rgba(255, 230, 200, 0.2)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.35));
+    }
+    .app-tile-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
       color: var(--muted);
     }
-
-    .screenshot-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+    .pill.accent {
+      background: rgba(139,92,246,0.12);
+      border-color: rgba(139,92,246,0.3);
+      color: #d6c6ff;
     }
-
-    .shot {
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.04);
-  aspect-ratio: 9 / 16;
-  display: block;
-  padding: 0;
-}
-
-.shot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.25s ease;
-}
-    .shot:hover img {
-  transform: scale(1.03);
-}
-    .shot img {
-  cursor: pointer;
-}
-
-    .shot .tiny {
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-    }
-
-    .shot .tiny.wide { width: 78%; }
-    .shot .tiny.med { width: 54%; }
-    .shot .tiny.short { width: 36%; }
-
-    .form-wrap {
-      padding: 24px;
-    }
-
-    form {
-      display: grid;
-      gap: 14px;
-    }
-
-    label {
-      display: grid;
-      gap: 8px;
+    .app-tile-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      color: var(--accent);
       font-weight: 600;
       font-size: 0.95rem;
     }
 
-    input,
-    textarea {
-      width: 100%;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      background: rgba(7,10,18,0.8);
-      color: var(--text);
-      padding: 14px 16px;
-      font: inherit;
-      outline: none;
+    /* Philosophy strip */
+    .philosophy {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
     }
-
-    input:focus,
-    textarea:focus {
-      border-color: rgba(110,231,249,0.7);
-      box-shadow: 0 0 0 4px rgba(110,231,249,0.12);
+    .philosophy-card {
+      padding: 26px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
     }
-
-    textarea { min-height: 150px; resize: vertical; }
-
-    .helper {
-      color: var(--muted);
-      font-size: 0.92rem;
+    .philosophy-card .num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 2.2rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 12px;
+      display: block;
     }
-
-    .contact-card,
-    .privacy-card {
-      padding: 24px;
+    .philosophy-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
     }
-
-    .footer {
-      padding: 24px 0 46px;
+    .philosophy-card p {
+      margin: 0;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .footer-line {
+    /* ---------- Artifex hero (single column with phone) ---------- */
+    .artifex-hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .phone-frame {
+      border-radius: 32px;
+      padding: 10px;
+      background: linear-gradient(180deg, #1b2236 0%, #0a0e1c 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      max-width: 320px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+      animation: float-a 8s ease-in-out infinite;
+      transform: rotate(-3deg);
+    }
+    .phone-frame .screen {
+      aspect-ratio: 9 / 19;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #0a0f1f;
+    }
+    .phone-frame .screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @keyframes float-a {
+      0%, 100% { transform: rotate(-3deg) translateY(0); }
+      50% { transform: rotate(-3deg) translateY(-10px); }
+    }
+
+    .phone-frame.mycelio {
+      animation: float-mycelio 8s ease-in-out infinite;
+      transform: rotate(3deg);
+      border-color: rgba(139,92,246,0.18);
+      box-shadow:
+        0 50px 100px rgba(0,0,0,0.55),
+        0 0 60px rgba(139,92,246,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    @keyframes float-mycelio {
+      0%, 100% { transform: rotate(3deg) translateY(0); }
+      50% { transform: rotate(3deg) translateY(-10px); }
+    }
+
+    /* ---------- Mission ---------- */
+    .mission-card {
+      padding: 32px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .mission-card p { margin: 0; }
+
+    /* ---------- Featured app two-up ---------- */
+    .app-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .app-panel {
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .app-copy { text-align: center; align-items: center; }
+    .app-copy p { color: var(--muted); margin: 0; max-width: 46ch; }
+    .app-copy ul {
+      margin: 6px auto 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 28px;
+      justify-items: start;
+      width: max-content;
+      max-width: 100%;
+      text-align: left;
+    }
+    .app-copy li {
+      color: var(--muted);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 22px;
+    }
+    .app-copy li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      opacity: 0.9;
+    }
+    .app-logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 4px;
+    }
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .shot {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      aspect-ratio: 9 / 16;
+    }
+    .shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+    .shot:hover img { transform: scale(1.04); }
+
+    /* ---------- Highlight sections (preserved) ---------- */
+    .highlight-section {
+      padding: 70px 0;
+      text-align: center;
+    }
+    .highlight-text { max-width: 620px; margin: 0 auto 48px; }
+    .highlight-text h3 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin: 0 0 12px;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+    }
+    .highlight-text h3 em {
+      font-style: italic;
+      font-family: var(--serif);
+      font-weight: 400;
+      color: #e7f7ff;
+    }
+    .highlight-text p { color: var(--muted); font-size: 1.05rem; margin: 0; }
+    .highlight-media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .media-frame {
+      border-radius: 28px;
+      background: linear-gradient(180deg, #1b2236, #0a0e1c);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      aspect-ratio: 9 / 19;
+      padding: 6px;
+    }
+    .media-frame > img,
+    .media-frame > video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      border-radius: 22px;
+      transition: transform 0.25s ease;
+    }
+    .media-side {
+      flex: 1;
+      max-width: 240px;
+      opacity: 0.72;
+      transform: scale(0.92);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .media-side:hover { opacity: 1; transform: scale(0.96); }
+    .media-center {
+      flex: 1.2;
+      max-width: 300px;
+      z-index: 2;
+      transform: translateY(-30px);
+      border-color: rgba(110,231,249,0.3);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 50px rgba(110, 231, 249, 0.12);
+    }
+    .media-frame:hover img,
+    .media-frame:hover video { transform: scale(1.03); }
+
+    @media (max-width: 850px) {
+      .highlight-media { flex-direction: column; gap: 24px; }
+      .media-center { transform: translateY(0); order: -1; max-width: 320px; }
+      .media-side { transform: scale(1); opacity: 1; max-width: 320px; }
+    }
+
+    /* ---------- Feedback / Contact ---------- */
+    .two-up {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .contact-card,
+    .privacy-card,
+    .form-wrap {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .contact-card h3,
+    .privacy-card h3 { margin: 0 0 10px; font-size: 1.15rem; }
+    .contact-card p,
+    .privacy-card p { color: var(--muted); margin: 0 0 8px; }
+    .contact-card a,
+    .privacy-card a {
+      color: var(--accent);
+      border-bottom: 1px dotted rgba(110,231,249,0.4);
+    }
+
+    form { display: grid; gap: 14px; }
+    label {
+      display: grid;
+      gap: 8px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    input, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      background: rgba(6,8,15,0.7);
+      color: var(--text);
+      padding: 14px 16px;
+      font: inherit;
+      font-size: 0.98rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus, textarea:focus {
+      border-color: rgba(110,231,249,0.5);
+      box-shadow: 0 0 0 4px rgba(110,231,249,0.1);
+    }
+    textarea { min-height: 140px; resize: vertical; }
+
+    .form-error {
+      margin: 0;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(255, 107, 107, 0.08);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      color: #ffb8b8;
+      font-size: 0.9rem;
+    }
+
+    .form-success {
+      text-align: center;
+      padding: 12px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      animation: zoomIn 0.4s ease;
+    }
+    .form-success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #07101c;
+      background: linear-gradient(135deg, #b8fff6, var(--accent));
+      box-shadow: 0 10px 30px rgba(110,231,249,0.3), inset 0 1px 0 rgba(255,255,255,0.5);
+      margin-bottom: 4px;
+    }
+    .form-success h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      letter-spacing: -0.02em;
+    }
+    .form-success p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 38ch;
+    }
+    .form-success .button { margin-top: 10px; }
+
+    #feedback-submit.loading { opacity: 0.7; cursor: wait; }
+    #feedback-submit.loading .arrow { animation: spin 0.9s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      padding: 60px 0 32px;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background:
+        linear-gradient(180deg, transparent, rgba(255,255,255,0.015));
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .footer-tag {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 38ch;
+      margin: 0;
+    }
+    .footer-col h4 {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+    .footer-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .footer-col a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    .footer-col a:hover { color: var(--text); }
+    .footer-bottom {
       display: flex;
       justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--muted-2);
+      font-size: 0.85rem;
     }
 
+    /* ---------- Mycelio placeholder ---------- */
+    .coming-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(139,92,246,0.12);
+      border: 1px solid rgba(139,92,246,0.3);
+      color: #d6c6ff;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .coming-pill .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 12px var(--accent-2);
+    }
+    .mycelio-stage {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mycelio-orb {
+      width: 70%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.4), transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(110,231,249,0.5), transparent 55%),
+        linear-gradient(135deg, #6b3cf0, #2a1a5e);
+      box-shadow:
+        0 60px 120px rgba(139,92,246,0.4),
+        inset 0 -20px 60px rgba(0,0,0,0.4),
+        inset 0 20px 40px rgba(255,255,255,0.1);
+      position: relative;
+      animation: orb-float 6s ease-in-out infinite;
+    }
+    .mycelio-orb img {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 62%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 40px rgba(255, 230, 200, 0.3));
+    }
+    @keyframes orb-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    /* ---------- Lightbox ---------- */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 8, 18, 0.88);
+      backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .lightbox.active { opacity: 1; pointer-events: auto; }
+    .lightbox-image {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 22px;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+      animation: zoomIn 0.25s ease;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .lightbox-close,
+    .lightbox-arrow {
+      position: absolute;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: white;
+      cursor: pointer;
+      border-radius: 14px;
+      transition: background 0.2s;
+    }
+    .lightbox-close {
+      top: 20px;
+      right: 24px;
+      font-size: 1.5rem;
+      width: 44px;
+      height: 44px;
+    }
+    .lightbox-arrow {
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+      padding: 10px 16px;
+    }
+    .lightbox-arrow.left { left: 24px; }
+    .lightbox-arrow.right { right: 24px; }
+    .lightbox-close:hover,
+    .lightbox-arrow:hover { background: rgba(255,255,255,0.18); }
+
+    /* ---------- Reveal animations ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.delay-1 { transition-delay: 0.08s; }
+    .reveal.delay-2 { transition-delay: 0.16s; }
+    .reveal.delay-3 { transition-delay: 0.24s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .phone-mock, .phone-frame, .mycelio-orb { animation: none; }
+    }
+
+    /* ---------- Responsive ---------- */
     @media (max-width: 980px) {
       .hero-grid,
+      .artifex-hero-grid,
       .app-grid,
       .two-up,
-      .feature-grid {
+      .apps-grid,
+      .philosophy,
+      .footer-grid {
         grid-template-columns: 1fr;
       }
-
-      .nav-links {
-        display: none;
-      }
+      .footer-grid { gap: 28px; }
+      .nav-links { gap: 0; }
+      .nav-link { padding: 6px 9px; font-size: 0.82rem; }
+      .hero { padding: 60px 0 30px; }
+      .phones-stage { max-width: 380px; margin-top: 20px; }
+      .app-copy ul { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .brand span:last-child { display: none; }
+      .lede { font-size: 1.02rem; }
     }
   </style>
 </head>
-  
+
 <body>
-  <div id="lightbox" class="lightbox">
-  <button class="lightbox-close">&times;</button>
-  <button class="lightbox-arrow left">&#10094;</button>
-  
+
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-arrow left" aria-label="Previous">&#10094;</button>
   <img id="lightbox-img" class="lightbox-image" src="" alt="Expanded media" style="display: none;" />
-  
   <video id="lightbox-vid" class="lightbox-image" autoplay loop muted playsinline style="display: none;"></video>
-  
-  <button class="lightbox-arrow right">&#10095;</button>
+  <button class="lightbox-arrow right" aria-label="Next">&#10095;</button>
 </div>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Artifex Health home">
-        <img src="ArtifexHealth_Artifex_Icon_1.png" alt="Artifex Health logo" class="brand-logo" />
-        <img src="ArtifexHealth_Artifex_Text_1.png" alt="Artifex Health" class="brand-text" />
-      </a>
 
-      <div class="nav-links">
-        <a href="#mission">Mission</a>
-        <a href="#app">Featured App</a>
-        <a href="#feedback">Feedback</a>
-        <a href="#contact">Support</a>
-        <a href="#privacy">Privacy</a>
-      </div>
-
-      <a class="button secondary" href="#app">View App</a>
-    </div>
-  </nav>
-
-  <main id="top">
-    <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="eyebrow">Wearable data, made useful</span>
-      <h1>Health insights that help you act.</h1>
-      <p>
-        Artifex Health turns wearable and body data into clear,
-        actionable insights so you can better understand how you feel, train, and recover.
-      </p>
-      <div class="hero-actions">
-        <a class="button primary" href="https://play.google.com/store/apps/details?id=com.kossapplications.artifexhealth" target="_blank" rel="noreferrer">
-          Get it on Google Play
-        </a>
-        <a class="button secondary" href="#feedback">Send Feedback</a>
-      </div>
-    </div>
-
-    <div class="hero-card" aria-hidden="true">
-      <div class="phone-frame">
-        <div class="screen">
-          <img 
-            src="Play%20store%20and%20website%20images/Dashboard%20Display.jpg" 
-            alt="Artifex Health dashboard"
-          />
-        </div>
-      </div>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" data-nav="overview" aria-label="Koss Applications home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Koss Applications</span>
+    </a>
+    <div class="nav-links">
+      <button class="nav-link" data-nav="overview">Overview</button>
+      <button class="nav-link" data-nav="artifex">Artifex Health</button>
+      <button class="nav-link" data-nav="mycelio">Mycelio</button>
     </div>
   </div>
-</section>
+</nav>
+
+<main id="top">
+
+  <!-- ============ OVERVIEW VIEW ============ -->
+  <section class="view" id="view-overview">
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow"><span class="dot"></span> Koss Applications</span>
+          <h1 class="display">
+            Applications that turn<br>
+            complexity into <em class="warm">clarity</em>.
+          </h1>
+          <p class="lede">
+            We build apps that take messy, overwhelming information and make it useful.
+            From wearable health data to AI prompt engineering, our work is about giving
+            you the context to act with confidence.
+          </p>
+          <div class="hero-actions">
+            <button class="button primary" data-nav="artifex">
+              Explore Artifex Health <span class="arrow">→</span>
+            </button>
+            <button class="button secondary" data-nav="mycelio">Meet Mycelio</button>
+          </div>
+          <div class="trust-row">
+            <span>Built in 2026</span>
+            <span class="dot"></span>
+            <span>Two apps live</span>
+            <span class="dot"></span>
+            <span>Solo Developer</span>
+          </div>
+        </div>
+
+        <div class="phones-stage reveal delay-2" aria-hidden="true">
+          <div class="phone-mock back">
+            <div class="screen mycelio-screen">
+              <img src="Mycelio_dashboard.jpg" alt="Mycelio dashboard" />
+            </div>
+          </div>
+          <div class="phone-mock front">
+            <div class="screen">
+              <img src="Artifex_home.jpg" alt="Artifex Health home" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="margin-bottom: 32px;">
+          <h2>Two apps, <em>one philosophy</em>.</h2>
+          <p class="lede" style="margin-top: 10px;">Make the complicated easy to use, and easy to understand.</p>
+        </div>
+
+        <div class="apps-grid">
+          <button type="button" class="app-tile reveal delay-1" data-nav="artifex">
+            <div class="app-tile-glow"></div>
+            <div class="app-tile-head">
+              <img class="app-tile-icon" src="ArtifexHealth_Artifex_Icon_1.png" alt="Artifex Health icon" />
+              <div>
+                <h3>Artifex Health</h3>
+                <div class="app-tile-tag">Health &amp; Wellness</div>
+              </div>
+            </div>
+            <div class="app-tile-preview">
+              <img src="Artifex_home.jpg" alt="Artifex Health preview" />
+            </div>
+            <p>
+              Made to be used with or without a wearable. Artifex Health translates raw wearable
+			  or logged health data into clear, actionable insights. With an easy to use interface,
+			  AI insights & chat, and a gamified theme, Artifex Health takes all of your
+			  health data to create one cohesive unique experience.
+            </p>
+            <div class="app-tile-pills">
+              <span class="pill">Sleep</span>
+              <span class="pill">Activity</span>
+              <span class="pill">Nutrition</span>
+			  <span class="pill">Body Composition</span>
+			  <span class="pill">Lab Results</span>
+			  <span class="pill">Workouts</span>
+              <span class="pill">AI Insights</span>
+            </div>
+            <span class="app-tile-cta">Learn more <span class="arrow">→</span></span>
+          </button>
+
+          <button type="button" class="app-tile mycelio reveal delay-2" data-nav="mycelio">
+            <div class="app-tile-glow"></div>
+            <div class="app-tile-head">
+              <div class="app-tile-icon mycelio-mark" aria-hidden="true">
+                <img src="Mycelio_logo.png" alt="" />
+              </div>
+              <div>
+                <h3>Mycelio</h3>
+                <div class="app-tile-tag">AI &amp; Productivity</div>
+              </div>
+            </div>
+            <div class="app-tile-preview mycelio">
+              <img src="Mycelio_logo.png" alt="Mycelio logo" />
+            </div>
+            <p>
+              Connecting you to the best AI models and optimizing your prompts behind the scenes.
+              Mycelio creates a unique experience by allowing you to chat with any AI model of your
+			  choosing. It can optimize your prompt and pick the best model, or you can go in manually
+			  and pick the models yourself, even switching models mid chat. These two forces work
+			  together to give you better answers with less effort, reducing follow-up and
+			  frustration.
+            </p>
+            <div class="app-tile-pills">
+              <span class="pill">Multi-model</span>
+              <span class="pill">Prompt tuning</span>
+              <span class="pill accent">Coming soon</span>
+            </div>
+            <span class="app-tile-cta">Learn more <span class="arrow">→</span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="margin-bottom: 28px;">
+          <h2>How we <em>build</em>.</h2>
+        </div>
+        <div class="philosophy">
+          <div class="philosophy-card reveal delay-1">
+            <span class="num">01</span>
+            <h3>Context, not numbers</h3>
+            <p>A metric without meaning is noise. We design every feature to explain what a number means and why it matters to you.</p>
+          </div>
+          <div class="philosophy-card reveal delay-2">
+            <span class="num">02</span>
+            <h3>Useful, not exhaustive</h3>
+            <p>We'd rather show you the three things that change your day than the thirty that don't. Clarity beats coverage.</p>
+          </div>
+          <div class="philosophy-card reveal delay-3">
+            <span class="num">03</span>
+            <h3>Designed to act on</h3>
+            <p>Whether it's health data, or AI prompting, we design to give you the ability to act on that information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ============ ARTIFEX HEALTH VIEW ============ -->
+  <section class="view" id="view-artifex">
+
+    <section class="hero">
+      <div class="container artifex-hero-grid">
+        <div class="reveal">
+          <span class="eyebrow"><span class="dot"></span> Artifex Health</span>
+          <h1 class="display">
+            Health insights<br>
+            that help you <em>act</em>.
+          </h1>
+          <p class="lede">
+            Artifex Health turns wearable and body data into clear, actionable insights so you
+            can understand how you feel, train, and recover.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://play.google.com/store/apps/details?id=com.kossapplications.artifexhealth" target="_blank" rel="noreferrer">
+              Get it on Google Play <span class="arrow">→</span>
+            </a>
+            <a class="button secondary" href="#feedback">Send feedback</a>
+          </div>
+        </div>
+
+        <div class="reveal delay-1" aria-hidden="true">
+          <div class="phone-frame">
+            <div class="screen">
+              <img src="Play%20store%20and%20website%20images/Dashboard%20Display.jpg" alt="Artifex Health dashboard" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="mission" class="section">
       <div class="container">
-        <div class="section-header">
-          <h2>Our mission</h2>
-          <p>
-            Wouldn't it be nice to have an all in one health app? One that tracks your wearable data, logs your body, lab, and nutrition results. Then ties it all together?
-            That was our goal with Artifex Health. Bringing all of your data together, in one place, then creating dynamic insight into that data to give you an accurate understanding
-            of your metrics and how they work together.
+        <div class="reveal" style="margin-bottom: 24px;">
+          <h2>Our <em>mission</em>.</h2>
+          <p class="lede" style="margin-top: 10px;">
+            One health app that brings your wearable, body, lab, and nutrition data together —
+            then ties it all into insight you can actually use.
           </p>
         </div>
-
-        <div class="mission-card">
+        <div class="mission-card reveal delay-1">
           <p>
-            With backgrounds in professional gaming, and a love for the health and wellness space, we design with passion and intention. Seeing your own
-            metrics is great, but we want you to do more than just look, we want you to act. Our goal is to make you aware of your
-            metrics, have context behind them, and have a personally curated solution to improving them. We want all of this to happen
-            while making it fun to be healthy. Artifex Health has successfully done this. Creating a seamless in-app
-            experience, where you can earn achievements, track your metrics, and have an AI assistant that pushes you to
-            create good habits and trends, all while giving you personal insight into your daily health and wellness. 
+            With backgrounds in professional gaming and a deep love for the health and wellness
+            space, we design with intention. Seeing your own metrics is great — but we want you
+            to do more than look. We want you to act. Artifex Health makes you aware of your
+            metrics, gives you context behind them, and offers a personally curated path to
+            improving them. Earn achievements, track your trends, and chat with an AI coach
+            that pushes you toward better habits, every day.
           </p>
         </div>
       </div>
@@ -708,251 +1361,363 @@
 
     <section id="app" class="section">
       <div class="container">
-        <div class="section-header">
-          <h2>Featured app</h2>
+        <div class="reveal" style="margin-bottom: 28px;">
+          <h2>Inside the <em>app</em>.</h2>
         </div>
-        
+
         <div class="app-grid">
-          <div class="mission-card app-panel app-copy">
-            <div>
-              <img 
-                src="ArtifexHealth_Artifex_Stack_1.png" 
-                alt="Artifex Health" 
-                class="app-logo"
-              />
-              <p>
-                Artifex Health is designed to transform raw wearable and phone data into meaningful feedback.
-                Instead of overwhelming you with disconnected metrics, Artifex focuses on taking these metrics and tying them all together.
-                Helping you understand what changed, why it matters, and what to do next.
-                With the use of AI, personal tags, and sensory data, you get personalized coaching insights in the
-                palm of your hand. 
-              </p>
-              <ul>
-                <li>Sleep stage and sleep quality insights</li>
-                <li>Recovery and daily readiness scoring</li>
-                <li>Heart rate and resting trend analysis</li>
-                <li>Activity Tracking</li>
-                <li>Daily Calorie Burn Tracking</li>
-                <li>Easy Nutrition Logging</li>
-                <li>Personalized Target Coaching</li>
-              </ul>
-            </div>
-            <div>
-              <a class="button primary" href="https://play.google.com/store/apps/details?id=com.kossapplications.artifexhealth" target="_blank" rel="noreferrer">Open on Google Play</a>
+          <div class="app-panel app-copy reveal delay-1">
+            <img src="ArtifexHealth_Artifex_Stack_1.png" alt="Artifex Health" class="app-logo" />
+            <p>
+              Artifex Health transforms raw wearable and phone data into meaningful feedback.
+              Instead of disconnected metrics, it ties them together to help you understand
+              what changed, why it matters, and what to do next.
+            </p>
+            <ul>
+              <li>Sleep stage &amp; quality</li>
+              <li>Daily readiness</li>
+              <li>Heart rate trends</li>
+              <li>Activity tracking</li>
+              <li>Calorie burn</li>
+              <li>Nutrition logging</li>
+              <li>AI coaching</li>
+              <li>Personal goals</li>
+            </ul>
+            <div style="margin-top: 8px;">
+              <a class="button primary" href="https://play.google.com/store/apps/details?id=com.kossapplications.artifexhealth" target="_blank" rel="noreferrer">
+                Open on Google Play <span class="arrow">→</span>
+              </a>
             </div>
           </div>
 
-          <div class="mission-card app-panel">
-  <div class="screenshot-grid" aria-label="App screenshots">
-
-    <div class="shot">
-      <img src="Play%20store%20and%20website%20images/Energy%20Trend.jpg" alt="Energy Trend screen" />
-    </div>
-
-    <div class="shot">
-      <img src="Play%20store%20and%20website%20images/Light%20Sleep.jpg" alt="Light Sleep screen" />
-    </div>
-
-    <div class="shot">
-      <img src="Play%20store%20and%20website%20images/Energy%20Bank.jpg" alt="Energy Bank screen" />
-    </div>
-
-    <div class="shot">
-      <img src="Play%20store%20and%20website%20images/Arti%20Chat.jpg" alt="Arti Chat screen" />
-    </div>
-
-  </div>
-</div>
+          <div class="app-panel reveal delay-2">
+            <div class="screenshot-grid" aria-label="App screenshots">
+              <div class="shot"><img src="Play%20store%20and%20website%20images/Energy%20Trend.jpg" alt="Energy Trend screen" /></div>
+              <div class="shot"><img src="Play%20store%20and%20website%20images/Light%20Sleep.jpg" alt="Light Sleep screen" /></div>
+              <div class="shot"><img src="Play%20store%20and%20website%20images/Energy%20Bank.jpg" alt="Energy Bank screen" /></div>
+              <div class="shot"><img src="Play%20store%20and%20website%20images/Arti%20Chat.jpg" alt="Arti Chat screen" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-header">
-          <h2>Key product highlights</h2>
+        <div class="reveal" style="margin-bottom: 12px;">
+          <h2>Key product <em>highlights</em>.</h2>
         </div>
 
-        <div class="highlight-section">
+        <div class="highlight-section reveal">
           <div class="highlight-text">
-            <h3>Nutrition Intelligence</h3>
-            <p>Log your food and get recommendations based on your current nutrient intake for the day. Helping you to balance out your nutrition profile while even taking into account allergies, diets, and maintenance goals.</p>
+            <h3>Nutrition <em>intelligence</em></h3>
+            <p>Log your food and get recommendations based on your current nutrient intake. Balance your day's profile while accounting for allergies, diets, and maintenance goals.</p>
           </div>
-          
           <div class="highlight-media">
-            <div class="media-frame media-side">
-              <img src="Play store and website images/nutrition_bars.jpg" alt="Nutrition Bars" />
-            </div>
-            
+            <div class="media-frame media-side"><img src="Play store and website images/nutrition_bars.jpg" alt="Nutrition Bars" /></div>
             <div class="media-frame media-center">
-              <video autoplay loop muted playsinline>
-                <source src="nutrition_final.mp4" type="video/mp4" />
-              </video>
+              <video autoplay loop muted playsinline><source src="nutrition_final.mp4" type="video/mp4" /></video>
             </div>
-            
-            <div class="media-frame media-side">
-              <img src="Play store and website images/arti_rec.jpg" alt="Arti Insight" />
-            </div>
+            <div class="media-frame media-side"><img src="Play store and website images/arti_rec.jpg" alt="Arti Insight" /></div>
           </div>
         </div>
 
-        <div class="highlight-section">
+        <div class="highlight-section reveal">
           <div class="highlight-text">
-            <h3>Sleep Intelligence</h3>
-            <p>Give yourself better context around your nightly sleep structure, duration, and recovery quality so you can understand what happened while you were sleeping.</p>
+            <h3>Sleep <em>intelligence</em></h3>
+            <p>Better context around your nightly sleep structure, duration, and recovery quality — so you understand what happened while you were sleeping.</p>
           </div>
-          
           <div class="highlight-media">
-            <div class="media-frame media-side">
-              <img src="Play store and website images/sleep_superstar.jpg" alt="Sleep Stages" />
-            </div>
-            
+            <div class="media-frame media-side"><img src="Play store and website images/sleep_superstar.jpg" alt="Sleep Stages" /></div>
             <div class="media-frame media-center">
-              <video autoplay loop muted playsinline>
-                <source src="sleep_video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <video autoplay loop muted playsinline><source src="sleep_video.mp4" type="video/mp4" /></video>
             </div>
-            
-            <div class="media-frame media-side">
-              <img src="Play store and website images/sleep_heart_rate.jpg" alt="Sleep Score" />
-            </div>
+            <div class="media-frame media-side"><img src="Play store and website images/sleep_heart_rate.jpg" alt="Sleep Score" /></div>
           </div>
         </div>
 
-        <div class="highlight-section">
+        <div class="highlight-section reveal">
           <div class="highlight-text">
-            <h3>Arti AI Chat</h3>
-            <p>Discuss your metrics with your own personal AI, Arti! Arti has context into all of your metrics, and can help correlate trends between them. Discuss your recent blood work with your nutrition habits, or simply ask how your sleep changes with your activity.</p>
+            <h3>Arti, your <em>AI coach</em></h3>
+            <p>Discuss your metrics with Arti — your personal AI with context into all your data. Correlate trends, ask about your blood work, or see how sleep changes with activity.</p>
           </div>
-          
           <div class="highlight-media">
-            <div class="media-frame media-side">
-              <img src="Play store and website images/vo2_max_trend.jpg" alt="VO2Max Trend" />
-            </div>
-            
+            <div class="media-frame media-side"><img src="Play store and website images/vo2_max_trend.jpg" alt="VO2Max Trend" /></div>
             <div class="media-frame media-center">
-              <video autoplay loop muted playsinline>
-                <source src="arti_video.mp4" type="video/mp4" />
-              </video>
+              <video autoplay loop muted playsinline><source src="arti_video.mp4" type="video/mp4" /></video>
             </div>
-            
-            <div class="media-frame media-side">
-              <img src="Play store and website images/arti_insight_sleep.jpg" alt="Arti Insight" />
-            </div>
+            <div class="media-frame media-side"><img src="Play store and website images/arti_insight_sleep.jpg" alt="Arti Insight" /></div>
           </div>
         </div>
 
-        <div class="highlight-section">
+        <div class="highlight-section reveal">
           <div class="highlight-text">
-            <h3>Readiness Scoring</h3>
-            <p>Show a concise daily signal that helps you decide whether to push, maintain, or recover based on overnight recovery and previous exertion.</p>
+            <h3>Readiness <em>scoring</em></h3>
+            <p>A concise daily signal that helps you decide whether to push, maintain, or recover — based on overnight recovery and prior exertion.</p>
           </div>
-          
           <div class="highlight-media">
-            <div class="media-frame media-side">
-              <img src="Play store and website images/Energy Trend.jpg" alt="Energy Trend" />
-            </div>
-            
+            <div class="media-frame media-side"><img src="Play store and website images/Energy Trend.jpg" alt="Energy Trend" /></div>
             <div class="media-frame media-center">
-              <video autoplay loop muted playsinline>
-                <source src="energy_trend.mp4" type="video/mp4" />
-              </video>
+              <video autoplay loop muted playsinline><source src="energy_trend.mp4" type="video/mp4" /></video>
             </div>
-            
-            <div class="media-frame media-side">
-              <img src="Play store and website images/energy_desc.jpg" alt="Readiness Insight" />
-            </div>
+            <div class="media-frame media-side"><img src="Play store and website images/energy_desc.jpg" alt="Readiness Insight" /></div>
           </div>
         </div>
-      
       </div>
     </section>
 
     <section id="feedback" class="section">
       <div class="container two-up">
-        <div>
-          <div class="section-header">
-            <h2>Feedback & feature requests</h2>
+        <div class="reveal">
+          <div style="margin-bottom: 18px;">
+            <h2>Feedback &amp; <em>feature requests</em>.</h2>
           </div>
-          <div class="privacy-card" style="display: flex; flex-direction: column; gap: 1rem;">
-            <p>
-              Missing features? If there are features in the app that are missing that you would like us to have,
-              we're always open to adding them.
+          <div class="privacy-card">
+            <p style="margin-bottom: 12px;">
+              <strong style="color: var(--text);">Missing features?</strong> If something you'd
+              like is missing from the app, we're always open to adding it.
+            </p>
+            <p style="margin-bottom: 12px;">
+              <strong style="color: var(--text);">Bug reports?</strong> Hit something that
+              shouldn't be there? Let us know — we'll get on it.
             </p>
             <p>
-              Bug Reports? If you experience any bugs that shouldn't belong or crashes in certain areas of the app,
-              we'll call the exterminator. This is meant to be a bug free environment!
-            </p>
-            <p>
-              Feedback? General feedback is always welcomed. We're always open to updating the app with more features,
-              or even taking away features if the vibes aren't there. Let us know your experience, both the good and the bad,
-              so we can create a great experience for everyone.
+              <strong style="color: var(--text);">General feedback?</strong> Always welcome.
+              Share the good and the bad — both help us build something better.
             </p>
           </div>
         </div>
 
-       <div class="mission-card form-wrap">
-  <form action="https://formspree.io/f/mreyvlbe" method="POST">
-
-    <label>
-      Name
-      <input type="text" name="name" placeholder="Your name" required />
-    </label>
-
-    <label>
-      Email
-      <input type="email" name="email" placeholder="you@example.com" required />
-    </label>
-
-    <label>
-      Message
-      <textarea name="message" placeholder="Feature idea, feedback, or bug report" required></textarea>
-    </label>
-    
-    <input type="hidden" name="_subject" value="New Artifex Health Feedback" />
-    <input type="text" name="_gotcha" style="display:none">
-
-    <button class="button primary" type="submit">Submit</button>
-  </form>
-</div>
+        <div class="form-wrap reveal delay-1">
+          <form id="feedback-form" action="https://formspree.io/f/mreyvlbe" method="POST">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" placeholder="Feature idea, feedback, or bug report" required></textarea>
+            </label>
+            <input type="hidden" name="_subject" value="New Artifex Health Feedback" />
+            <input type="text" name="_gotcha" style="display:none">
+            <button class="button primary" type="submit" id="feedback-submit">
+              <span class="btn-label">Submit</span>
+              <span class="arrow">→</span>
+            </button>
+            <p id="feedback-error" class="form-error" hidden>
+              Something went wrong sending your message. Please try again, or email us directly.
+            </p>
+          </form>
+          <div id="feedback-success" class="form-success" hidden>
+            <div class="form-success-icon" aria-hidden="true">✓</div>
+            <h3>Thanks for the message!</h3>
+            <p>We read every submission and will get back to you if it needs a reply. Appreciate you helping shape the app.</p>
+            <button type="button" class="button secondary" id="feedback-reset">Send another</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="contact" class="section">
       <div class="container two-up">
-        <div class="contact-card">
+        <div class="contact-card reveal">
           <h3>Support</h3>
-          <p>
-            For app support, bug reports, or general questions, reach out to
+          <p>For app support, bug reports, or general questions, reach out to
             <a href="mailto:artifexhealth@kossapplications.app">artifexhealth@kossapplications.app</a>.
           </p>
         </div>
-        
-        <div id="privacy" class="privacy-card">
+        <div id="privacy" class="privacy-card reveal delay-1">
           <h3>Privacy Policy</h3>
-           <p>
-            Your privacy and safety is important to us. View our Privacy Policy to see how we handle your data.
-          </p>
-          <p>
-            <a href="/PRIVACY_POLICY.html">Read our Privacy Policy by clicking here.</a>
-          </p>
+          <p>Your privacy and safety are important to us. View our Privacy Policy to see how we handle your data.</p>
+          <p><a href="/PRIVACY_POLICY.html">Read our Privacy Policy →</a></p>
         </div>
       </div>
     </section>
-  </main>
+  </section>
 
-  <footer class="footer">
-    <div class="container footer-line">
-      <span>© 2026 Koss Applications LLC</span>
-      <div style="display:flex; gap:16px; flex-wrap:wrap;">
-        <a href="/PRIVACY_POLICY.html">Privacy Policy</a>
-        <a href="mailto: artifexhealth@kossapplications.app">Contact</a>
+  <!-- ============ MYCELIO VIEW ============ -->
+  <section class="view" id="view-mycelio">
+    <section class="hero">
+      <div class="container artifex-hero-grid">
+        <div class="reveal">
+          <span class="coming-pill"><span class="dot"></span> Coming Soon</span>
+          <h1 class="display">
+            The right model.<br>
+            The right <em class="warm">prompt</em>.
+          </h1>
+          <p class="lede">
+            Mycelio connects you to the best AI models and optimizes every prompt behind the
+            scenes — so you stop fighting with phrasing and start getting answers that land.
+            More details coming soon.
+          </p>
+          <div class="hero-actions">
+            <button class="button secondary" data-nav="overview">Back to overview</button>
+          </div>
+        </div>
+
+        <div class="reveal delay-1" aria-hidden="true">
+          <div class="phone-frame mycelio">
+            <div class="screen">
+              <img src="Mycelio_dashboard.jpg" alt="Mycelio dashboard" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Koss Applications</span>
+        </div>
+        <p class="footer-tag">Apps that turn complexity into clarity. Built with passion and care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a data-nav="artifex">Artifex Health</a></li>
+          <li><a data-nav="mycelio">Mycelio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a data-nav="overview">Overview</a></li>
+          <li><a href="mailto:artifexhealth@kossapplications.app">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/PRIVACY_POLICY.html">Privacy Policy</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <span>© 2026 Koss Applications LLC. All rights reserved.</span>
+      <span>www.kossapplications.app</span>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    
+<script>
+  // ---- View switching ----
+  const views = {
+    overview: document.getElementById('view-overview'),
+    artifex: document.getElementById('view-artifex'),
+    mycelio: document.getElementById('view-mycelio'),
+  };
+  const navButtons = document.querySelectorAll('.nav-link');
+
+  function showView(name, opts) {
+    opts = opts || {};
+    const pushHistory = opts.pushHistory !== false;
+    if (!views[name]) name = 'overview';
+    Object.entries(views).forEach(([key, el]) => {
+      el.classList.toggle('active', key === name);
+    });
+    navButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.nav === name);
+    });
+    const targetHash = '#' + name;
+    if (pushHistory && location.hash !== targetHash) {
+      history.pushState({ view: name }, '', targetHash);
+    } else if (!pushHistory && location.hash !== targetHash) {
+      history.replaceState({ view: name }, '', targetHash);
+    }
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    requestAnimationFrame(runReveals);
+  }
+
+  document.querySelectorAll('[data-nav]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const target = el.dataset.nav;
+      if (!target) return;
+      e.preventDefault();
+      showView(target);
+    });
+  });
+
+  window.addEventListener('popstate', (e) => {
+    const name = (e.state && e.state.view) || location.hash.replace('#', '') || 'overview';
+    showView(name, { pushHistory: false });
+  });
+
+  // ---- Scroll reveal ----
+  let observer;
+  function runReveals() {
+    if (observer) observer.disconnect();
+    const items = document.querySelectorAll('.view.active .reveal');
+    items.forEach(el => el.classList.remove('visible'));
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    items.forEach(el => observer.observe(el));
+  }
+
+  // Initial view from hash — replace state so back button doesn't fall off the page
+  const initial = location.hash.replace('#', '') || 'overview';
+  history.replaceState({ view: initial }, '', '#' + initial);
+  showView(initial, { pushHistory: false });
+
+  // ---- Feedback form (AJAX) ----
+  const feedbackForm = document.getElementById('feedback-form');
+  const feedbackSuccess = document.getElementById('feedback-success');
+  const feedbackError = document.getElementById('feedback-error');
+  const feedbackSubmit = document.getElementById('feedback-submit');
+  const feedbackReset = document.getElementById('feedback-reset');
+
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      feedbackError.hidden = true;
+      feedbackSubmit.classList.add('loading');
+      feedbackSubmit.disabled = true;
+
+      try {
+        const response = await fetch(feedbackForm.action, {
+          method: 'POST',
+          body: new FormData(feedbackForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          feedbackForm.hidden = true;
+          feedbackSuccess.hidden = false;
+          feedbackForm.reset();
+        } else {
+          feedbackError.hidden = false;
+        }
+      } catch (err) {
+        feedbackError.hidden = false;
+      } finally {
+        feedbackSubmit.classList.remove('loading');
+        feedbackSubmit.disabled = false;
+      }
+    });
+
+    feedbackReset.addEventListener('click', () => {
+      feedbackSuccess.hidden = true;
+      feedbackForm.hidden = false;
+    });
+  }
+
+  // ---- Lightbox ----
   const mediaElements = document.querySelectorAll('.shot img, .media-frame img, .media-frame video');
-    
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxVid = document.getElementById('lightbox-vid');
@@ -966,18 +1731,15 @@
   function updateLightboxMedia(index) {
     const media = mediaArray[index];
     const isVideo = media.tagName.toLowerCase() === 'video';
-
     if (isVideo) {
       lightboxImg.style.display = 'none';
       lightboxVid.style.display = 'block';
-      
       const sourceElement = media.querySelector('source');
       lightboxVid.src = sourceElement ? sourceElement.src : media.src;
       lightboxVid.play();
     } else {
       lightboxVid.style.display = 'none';
       lightboxVid.pause();
-      
       lightboxImg.style.display = 'block';
       lightboxImg.src = media.src;
     }
@@ -988,17 +1750,14 @@
     updateLightboxMedia(currentIndex);
     lightbox.classList.add('active');
   }
-
   function closeLightbox() {
     lightbox.classList.remove('active');
     lightboxVid.pause();
   }
-
   function showNext() {
     currentIndex = (currentIndex + 1) % mediaArray.length;
     updateLightboxMedia(currentIndex);
   }
-
   function showPrev() {
     currentIndex = (currentIndex - 1 + mediaArray.length) % mediaArray.length;
     updateLightboxMedia(currentIndex);
@@ -1011,14 +1770,9 @@
   closeBtn.addEventListener('click', closeLightbox);
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
-
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowRight') showNext();
     if (e.key === 'ArrowLeft') showPrev();
