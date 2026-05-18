@@ -1,2 +1,2 @@
 # artifexhealth.github.io
-Website for Artifex Health
+Website for Koss Applications. Artifex Health and Mycelio
