@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Base diagonal dark gradient (160deg from #1a1230 to #0c0a1c) -->
+    <linearGradient id="base" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a1230"/>
+      <stop offset="100%" stop-color="#0c0a1c"/>
+    </linearGradient>
+
+    <!-- Cyan accent glow (top, subtle) -->
+    <radialGradient id="cyan" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#6ee7f9" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#6ee7f9" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Violet primary glow (center-low, strong) -->
+    <radialGradient id="violet" cx="50%" cy="60%" r="60%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#base)"/>
+  <rect width="1024" height="1024" fill="url(#cyan)"/>
+  <rect width="1024" height="1024" fill="url(#violet)"/>
+</svg>
