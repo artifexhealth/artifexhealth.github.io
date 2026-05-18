@@ -880,6 +880,7 @@
       font-size: 0.9rem;
     }
 
+    .form-success[hidden] { display: none; }
     .form-success {
       text-align: center;
       padding: 12px 0;
@@ -1516,7 +1517,6 @@
             <div class="form-success-icon" aria-hidden="true">✓</div>
             <h3>Thanks for the message!</h3>
             <p>We read every submission and will get back to you if it needs a reply. Appreciate you helping shape the app.</p>
-            <button type="button" class="button secondary" id="feedback-reset">Send another</button>
           </div>
         </div>
       </div>
@@ -1680,7 +1680,6 @@
   const feedbackSuccess = document.getElementById('feedback-success');
   const feedbackError = document.getElementById('feedback-error');
   const feedbackSubmit = document.getElementById('feedback-submit');
-  const feedbackReset = document.getElementById('feedback-reset');
 
   if (feedbackForm) {
     feedbackForm.addEventListener('submit', async (e) => {
@@ -1710,10 +1709,6 @@
       }
     });
 
-    feedbackReset.addEventListener('click', () => {
-      feedbackSuccess.hidden = true;
-      feedbackForm.hidden = false;
-    });
   }
 
   // ---- Lightbox ----
