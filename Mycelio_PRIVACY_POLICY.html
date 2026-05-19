@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mycelio AI - Privacy Policy</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            line-height: 1.7;
+            color: #334155;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .policy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 60px 80px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0,0,0,0.02);
+        }
+        h1 {
+            font-size: 2.25rem;
+            color: #0f172a;
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-weight: 600;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #334155;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        ul {
+            margin-top: 0;
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 48px 0;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        .meta-info {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+        }
+        .footer-note {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            font-style: italic;
+            margin-top: 48px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 30px 20px;
+            }
+            body {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="policy-container">
+        <h1>Mycelio Privacy Policy</h1>
+        
+        <div class="meta-info">
+            <p><strong>Effective date:</strong> May 18, 2026<br>
+            <strong>Last updated:</strong> May 18, 2026</p>
+        </div>
+
+        <p>This Privacy Policy describes how Mycelio AI ("Mycelio," "we," "us," or "our") collects, uses, shares, and protects information when you use the Mycelio AI mobile application (the "App") and any related services (collectively, the "Service").</p>
+
+        <p>By creating an account or using the App, you agree to the practices described in this Policy. If you do not agree, do not use the Service.</p>
+
+        <h2>1. Who We Are</h2>
+        <p>Mycelio is operated by Koss Applications LLC.</p>
+        <p><strong>Contact for privacy questions:</strong> artifexhealth@kossapplications.app</p>
+
+        <h2>2. Information We Collect</h2>
+        <p>We collect only what we need to run the Service. The categories below describe everything we collect.</p>
+
+        <h3>2.1 Information you provide directly</h3>
+        <ul>
+            <li><strong>Account information.</strong> When you sign up via email/password or Google Sign-In, we collect your email address and (if you choose Google Sign-In) the name and email associated with your Google account.</li>
+            <li><strong>Display name.</strong> A name you choose during onboarding, used to address you in the App.</li>
+            <li><strong>Memory / Notes (Pro feature).</strong> Free-form text you optionally save in the "Memory / Notes" feature. This text is shared with the AI model on every chat to give the model context about you (e.g., your job, preferences, recurring projects). Stored in Firestore until you edit or delete it.</li>
+            <li><strong>Snippets and collections.</strong> Saved prompt templates and image thumbnails you create within the App.</li>
+            <li><strong>Chat content.</strong> The prompts you submit to the AI, attached images, and the AI's responses. Conversation history is stored so you can return to past chats.</li>
+            <li><strong>Voice input (optional).</strong> When you tap the microphone, audio is captured and transcribed to text on-device or via Google speech services. We do not retain raw audio on our servers — only the resulting transcript, which is treated as ordinary chat content.</li>
+            <li><strong>Feedback and ratings (optional).</strong> Thumbs-up / thumbs-down ratings and any feedback you submit.</li>
+        </ul>
+
+        <h3>2.2 Information collected automatically</h3>
+        <ul>
+            <li><strong>Usage data.</strong> For each chat: which AI model was selected, token counts, credits charged, timestamps, and message counts. We use this to bill credits, display usage stats, and improve our model-routing logic.</li>
+            <li><strong>Authentication metadata.</strong> Sign-in timestamps, IP address (transiently, for security checks), and Firebase Authentication identifiers.</li>
+            <li><strong>Device and app diagnostic data via Firebase Analytics.</strong> This includes a Firebase-generated app instance ID, device model, operating system version, app version, country, language, and aggregated event counts (screen opens, feature use). Firebase Analytics does not include your name, email, or chat content.</li>
+            <li><strong>Crash and performance data</strong> (if enabled) sufficient to diagnose technical problems.</li>
+        </ul>
+
+        <h3>2.3 Information we do <em>not</em> collect</h3>
+        <ul>
+            <li><strong>Payment card data.</strong> All purchases (subscriptions and credit top-ups) are processed by Google Play Billing. We receive only an opaque purchase token and confirmation that a transaction succeeded. We never see, store, or have access to your payment card, billing address, or other financial information.</li>
+            <li><strong>Precise location.</strong> We do not request or collect GPS location.</li>
+            <li><strong>Contacts, SMS, or call history.</strong> We do not access these on your device.</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the information described above to:</p>
+        <ul>
+            <li>Provide the core Service — sign you in, route your prompts to AI models, return responses, and store your conversation history.</li>
+            <li>Process and track in-app purchases, credit balances, and subscription state.</li>
+            <li>Calculate and display your usage statistics.</li>
+            <li>Improve the App, including the prompt optimizer and model-routing logic (using aggregated, de-identified usage data where practical).</li>
+            <li>Investigate abuse, prevent fraud, enforce our Terms of Service, and comply with legal obligations.</li>
+            <li>Communicate with you about service-critical issues (e.g., security notices). We do not send marketing email unless you opt in.</li>
+        </ul>
+        <p>We do <strong>not</strong> use your chat content to train our own AI models, nor do we sell your personal information to third parties.</p>
+
+        <h2>4. How We Share Your Information</h2>
+        <p>We share information only with the service providers and parties listed below, and only as needed to run the Service.</p>
+
+        <h3>4.1 Infrastructure providers</h3>
+        <ul>
+            <li><strong>Google Firebase / Google Cloud Platform</strong> — hosts our database (Firestore), authentication system, cloud functions, and analytics. Your account information, conversation history, memory notes, snippets, and usage data are stored on Google's infrastructure under our control. Google processes this data on our behalf under its standard terms (<a href="https://cloud.google.com/terms/data-processing-terms" target="_blank" rel="noopener">https://cloud.google.com/terms/data-processing-terms</a>).</li>
+        </ul>
+
+        <h3>4.2 AI model providers (via OpenRouter)</h3>
+        <p>When you send a prompt, it is transmitted through <strong>OpenRouter</strong> (OpenRouter Inc., <a href="https://openrouter.ai" target="_blank" rel="noopener">https://openrouter.ai</a>), our model-routing provider, which forwards your prompt to the AI model selected for that request. Depending on the model chosen, your prompt is processed by one of the following providers:</p>
+        <ul>
+            <li>Anthropic (Claude models)</li>
+            <li>OpenAI (GPT models)</li>
+            <li>Google (Gemini models)</li>
+            <li>xAI (Grok models)</li>
+            <li>Meta (Llama models)</li>
+            <li>DeepSeek</li>
+            <li>Perplexity</li>
+            <li>Mistral AI</li>
+        </ul>
+        <p>The selected provider receives <strong>the contents of your prompt</strong>, any <strong>attached images</strong>, and <strong>your saved memory notes</strong> (Pro users only) for the duration needed to generate a response. Each provider's handling of that data is governed by their own privacy policy and the data-processing terms OpenRouter has in place with them. We do not control how these third parties handle your data once it leaves our systems.</p>
+        <p>You can review the providers' policies directly: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>, <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI</a>, <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>, <a href="https://x.ai/legal/privacy-policy" target="_blank" rel="noopener">xAI</a>, <a href="https://www.llama.com/llama3/use-policy/" target="_blank" rel="noopener">Meta</a>, <a href="https://chat.deepseek.com/downloads/DeepSeek%20Privacy%20Policy.html" target="_blank" rel="noopener">DeepSeek</a>, <a href="https://www.perplexity.ai/hub/legal/privacy-policy" target="_blank" rel="noopener">Perplexity</a>, <a href="https://mistral.ai/terms/#privacy-policy" target="_blank" rel="noopener">Mistral</a>, <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">OpenRouter</a>.</p>
+        <p>OpenRouter and the underlying providers may retain prompts and responses transiently for abuse-monitoring purposes, typically for 30 days, and do not use Mycelio user prompts for model training under the API tiers we use. We do not guarantee this on their behalf — please consult each provider's policy.</p>
+
+        <h3>4.3 Payments</h3>
+        <ul>
+            <li><strong>Google Play Billing</strong> processes all purchases. We receive only a purchase token and product ID. Your payment information is handled entirely by Google under their privacy policy (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>).</li>
+        </ul>
+
+        <h3>4.4 Legal disclosures</h3>
+        <p>We may disclose information when we believe in good faith that disclosure is required by law, court order, or valid government request, or is necessary to investigate fraud, protect the safety of users, or enforce our Terms of Service.</p>
+
+        <h3>4.5 Business transfers</h3>
+        <p>If Mycelio is involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you of any such transfer and any change in this Policy.</p>
+
+        <h2>5. Where Your Data Is Stored</h2>
+        <p>Your data is stored on Google Cloud infrastructure, primarily in the United States. Some processing may occur in other regions where Google or the AI providers operate. If you are accessing the Service from outside the United States, you consent to the transfer of your information to the United States, which may have data-protection rules different from those in your country.</p>
+
+        <h2>6. Data Retention</h2>
+        <ul>
+            <li><strong>Account data and conversation history</strong> are retained for as long as your account is active. You can delete individual conversations from within the App at any time.</li>
+            <li><strong>Memory notes, snippets, and saved images</strong> are retained until you delete them.</li>
+            <li><strong>Usage and billing records</strong> are retained for as long as needed to operate the Service, comply with tax and accounting obligations (typically 7 years), and resolve disputes.</li>
+            <li><strong>Firebase Analytics events</strong> are retained per the default Firebase retention period (typically 14 months) unless you opt out.</li>
+            <li><strong>When you delete your account</strong>, we delete or anonymize your personal information within 30 days, except where we are required to retain it for legal or accounting purposes.</li>
+        </ul>
+
+        <h2>7. Your Rights and Choices</h2>
+        <p>Depending on where you live, you may have the following rights regarding your personal information:</p>
+        <ul>
+            <li><strong>Access.</strong> Request a copy of the personal data we hold about you.</li>
+            <li><strong>Correction.</strong> Request that we correct inaccurate data (you can also edit most of it directly in the App).</li>
+            <li><strong>Deletion.</strong> Request that we delete your account and associated data. You can delete your account from within the App's Settings, or by emailing us.</li>
+            <li><strong>Export.</strong> Request a portable copy of your data.</li>
+            <li><strong>Withdraw consent / opt out.</strong> Stop using the App at any time. Opt out of Firebase Analytics by signing out and uninstalling the App.</li>
+        </ul>
+        <p>To exercise any of these rights, email <strong>artifexhealth@kossapplications.app</strong>. We will respond within 30 days (or sooner where required by law).</p>
+
+        <h3>7.1 If you are in the European Economic Area, UK, or Switzerland</h3>
+        <p>You have additional rights under the GDPR / UK GDPR, including the right to lodge a complaint with your local data-protection authority. Our legal bases for processing are:</p>
+        <ul>
+            <li><strong>Contract performance</strong> — to provide the Service you've signed up for.</li>
+            <li><strong>Legitimate interests</strong> — to improve and secure the Service, prevent fraud.</li>
+            <li><strong>Consent</strong> — for optional features (e.g., voice input, where applicable).</li>
+            <li><strong>Legal obligation</strong> — for tax, accounting, and regulatory requirements.</li>
+        </ul>
+
+        <h3>7.2 If you are in California</h3>
+        <p>Under the California Consumer Privacy Act (CCPA), you have the right to know what personal information we collect, to delete it, and to opt out of any "sale" or "sharing" of personal information. <strong>We do not sell your personal information.</strong> Submit requests to <strong>artifexhealth@kossapplications.app</strong>.</p>
+
+        <h2>8. Security</h2>
+        <p>We use industry-standard measures to protect your data, including:</p>
+        <ul>
+            <li>TLS encryption in transit for all network requests.</li>
+            <li>Firestore Security Rules that prevent any client from reading or writing another user's data.</li>
+            <li>Server-side validation of all credit and subscription changes (clients cannot tamper with credit balances).</li>
+            <li>Authentication via Firebase Authentication with optional Google Sign-In.</li>
+        </ul>
+        <p>No security measure is perfect. If we become aware of a breach affecting your personal data, we will notify you and the relevant authorities as required by law.</p>
+
+        <h2>9. Children's Privacy</h2>
+        <p>Mycelio is not directed to children under 13 (or under 16 in the EEA). We do not knowingly collect personal information from children under those ages. If you believe a child has provided us with information, contact us at <strong>artifexhealth@kossapplications.app</strong> and we will delete it.</p>
+
+        <h2>10. Third-Party Links and Services</h2>
+        <p>The App may link to third-party websites (e.g., manage your subscription in Google Play). Those services have their own privacy policies; we are not responsible for their practices.</p>
+
+        <h2>11. Changes to This Policy</h2>
+        <p>We may update this Policy from time to time. If we make material changes, we will notify you in-app or by email at least 14 days before the change takes effect. The "Last updated" date at the top tells you when this Policy was last revised. Continued use of the Service after the effective date constitutes acceptance of the updated Policy.</p>
+
+        <h2>12. Contact Us</h2>
+        <p>Privacy questions, complaints, and rights requests:</p>
+        <p><strong>Koss Applications LLC</strong><br>
+        <strong>Email:</strong> <a href="mailto:artifexhealth@kossapplications.app">artifexhealth@kossapplications.app</a></p>
+
+        <hr>
+
+        <p class="footer-note">Mycelio AI is an independent product and is not affiliated with, endorsed by, or sponsored by Anthropic, OpenAI, Google, xAI, Meta, DeepSeek, Perplexity, Mistral, or OpenRouter. All trademarks are the property of their respective owners.</p>
+    </div>
+</body>
+</html>
