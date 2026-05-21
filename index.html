@@ -330,6 +330,60 @@
       filter: blur(48px);
       z-index: 0;
     }
+    /* Overview hero: floating, colliding logo bubbles */
+    .logos-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .logo-bubble {
+      position: absolute;
+      width: 58%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 40px 90px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+    .logo-bubble img {
+      width: 60%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+    }
+    .logo-bubble.artifex {
+      left: 2%;
+      top: 5%;
+      z-index: 2;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(110,231,249,0.38), transparent 62%),
+        linear-gradient(160deg, #11283a 0%, #0a0f1f 100%);
+      box-shadow: 0 40px 90px rgba(0,0,0,0.5), 0 0 60px rgba(110,231,249,0.28), inset 0 1px 0 rgba(255,255,255,0.1);
+      animation: bubble-a 8s ease-in-out infinite;
+    }
+    .logo-bubble.mycelio {
+      right: 2%;
+      bottom: 5%;
+      z-index: 1;
+      background:
+        radial-gradient(circle at 60% 65%, rgba(139,92,246,0.42), transparent 62%),
+        linear-gradient(160deg, #1a1230 0%, #0c0a1c 100%);
+      box-shadow: 0 40px 90px rgba(0,0,0,0.5), 0 0 60px rgba(139,92,246,0.32), inset 0 1px 0 rgba(255,255,255,0.08);
+      animation: bubble-b 9s ease-in-out infinite;
+    }
+    @keyframes bubble-a {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes bubble-b {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+
     .phone-mock {
       position: absolute;
       width: 56%;
@@ -1108,7 +1162,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
-      .phone-mock, .phone-frame, .mycelio-orb { animation: none; }
+      .phone-mock, .phone-frame, .mycelio-orb, .logo-bubble { animation: none; }
     }
 
     /* ---------- Responsive ---------- */
@@ -1127,6 +1181,7 @@
       .nav-link { padding: 6px 9px; font-size: 0.82rem; }
       .hero { padding: 60px 0 30px; }
       .phones-stage { max-width: 380px; margin-top: 20px; }
+      .logos-stage { max-width: 340px; margin-top: 20px; }
       .app-copy ul { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
@@ -1193,16 +1248,12 @@
           </div>
         </div>
 
-        <div class="phones-stage reveal delay-2" aria-hidden="true">
-          <div class="phone-mock back">
-            <div class="screen mycelio-screen">
-              <img src="Mycelio_dashboard.jpg" alt="Mycelio dashboard" />
-            </div>
+        <div class="logos-stage reveal delay-2" aria-hidden="true">
+          <div class="logo-bubble artifex">
+            <img src="ArtifexHealth_Artifex_Icon_1.png" alt="Artifex Health logo" />
           </div>
-          <div class="phone-mock front">
-            <div class="screen">
-              <img src="Artifex_home.jpg" alt="Artifex Health home" />
-            </div>
+          <div class="logo-bubble mycelio">
+            <img src="Mycelio_logo.png" alt="Mycelio logo" />
           </div>
         </div>
       </div>
