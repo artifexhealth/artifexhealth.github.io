@@ -52,7 +52,27 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      /* Firefox */
+      scrollbar-width: thin;
+      scrollbar-color: rgba(139,92,246,0.45) transparent;
+    }
+
+    /* Modern scrollbar (WebKit/Chromium) */
+    ::-webkit-scrollbar { width: 11px; height: 11px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      border: 3px solid transparent;
+      background-clip: padding-box;
+      background-color: rgba(255,255,255,0.16);
+      transition: background-color 0.2s ease;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(139,92,246,0.6);
+    }
+    ::-webkit-scrollbar-corner { background: transparent; }
 
     body {
       margin: 0;
