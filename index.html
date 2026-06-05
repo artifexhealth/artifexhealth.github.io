@@ -1095,6 +1095,364 @@
       50% { transform: translateY(-14px); }
     }
 
+    /* ---------- Live pill (Mycelio) ---------- */
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(110,231,249,0.10);
+      border: 1px solid rgba(110,231,249,0.3);
+      color: #bff3ff;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .live-pill .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #36d399;
+      box-shadow: 0 0 0 0 rgba(54,211,153,0.6);
+      animation: live-pulse 2s ease-in-out infinite;
+    }
+    @keyframes live-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(54,211,153,0.5); }
+      70% { box-shadow: 0 0 0 8px rgba(54,211,153,0); }
+      100% { box-shadow: 0 0 0 0 rgba(54,211,153,0); }
+    }
+
+    /* ---------- Browser / Monitor frames ---------- */
+    .browser-frame {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #0c1020;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+    }
+    .browser-frame.glow-violet {
+      border-color: rgba(139,92,246,0.25);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.55), 0 0 70px rgba(139,92,246,0.18);
+    }
+    .browser-frame.glow-cyan {
+      border-color: rgba(110,231,249,0.25);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.55), 0 0 70px rgba(110,231,249,0.16);
+    }
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 11px 14px;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .browser-dots {
+      display: flex;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+    .browser-dots span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      display: block;
+    }
+    .browser-dots span:nth-child(1) { background: #ff5f57; }
+    .browser-dots span:nth-child(2) { background: #febc2e; }
+    .browser-dots span:nth-child(3) { background: #28c840; }
+    .browser-url {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted-2);
+      font-size: 0.8rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .browser-url svg { flex-shrink: 0; opacity: 0.7; }
+    .browser-screen {
+      display: block;
+      overflow: hidden;
+      background: #0a0f1f;
+    }
+    .browser-screen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+    .browser-screen.crop {
+      max-height: 460px;
+    }
+    .browser-screen.crop img {
+      object-fit: cover;
+      object-position: top;
+    }
+    .browser-frame:hover .browser-screen img { transform: scale(1.015); }
+
+    /* Hero monitor with stand */
+    .monitor {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .monitor .browser-frame {
+      animation: float-monitor 9s ease-in-out infinite;
+    }
+    .monitor-stand {
+      width: 16%;
+      height: 26px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #1a2138, #0c1020);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-top: none;
+      border-radius: 0 0 6px 6px;
+    }
+    .monitor-base {
+      width: 34%;
+      height: 10px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #1a2138, #0a0e1c);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 0 0 14px 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    @keyframes float-monitor {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
+
+    /* ---------- Mycelio "how it works" steps ---------- */
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      position: relative;
+    }
+    .flow-card {
+      padding: 28px 24px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .flow-card .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.4rem;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent-2), #5b8def);
+      box-shadow: 0 8px 20px rgba(139,92,246,0.3);
+      margin-bottom: 16px;
+    }
+    .flow-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+    .flow-card p { color: var(--muted); margin: 0; font-size: 0.97rem; }
+    .flow-arrow {
+      position: absolute;
+      top: 42px;
+      font-size: 1.4rem;
+      color: var(--accent-2);
+      opacity: 0.5;
+      z-index: 2;
+    }
+
+    /* ---------- Showcase rows (alternating text + monitor) ---------- */
+    .showcase {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .showcase.flip .showcase-text { order: 2; }
+    .showcase.flip .showcase-media { order: 1; }
+    .showcase-text h3 {
+      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .showcase-text h3 em {
+      font-style: italic;
+      font-family: var(--serif);
+      font-weight: 400;
+      color: #e7f7ff;
+    }
+    .showcase-text p { color: var(--muted); margin: 0 0 18px; font-size: 1.05rem; }
+    .showcase-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .showcase-list li {
+      color: var(--muted);
+      font-size: 0.98rem;
+      position: relative;
+      padding-left: 28px;
+    }
+    .showcase-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 5px;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+    }
+    .showcase-list li::after {
+      content: "✓";
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      font-size: 0.7rem;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* ---------- Feature grid (Mycelio capabilities) ---------- */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .cap-card {
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cap-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(139,92,246,0.3);
+      box-shadow: var(--shadow);
+    }
+    .cap-card .cap-shot {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #0a0f1f;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .cap-card .cap-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.5s ease;
+    }
+    .cap-card:hover .cap-shot img { transform: scale(1.05); }
+    .cap-body { padding: 20px 22px 24px; }
+    .cap-body h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .cap-body p { color: var(--muted); margin: 0; font-size: 0.93rem; }
+
+    /* ---------- Shared example cards ---------- */
+    .share-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .share-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 26px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      color: inherit;
+    }
+    .share-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(139,92,246,0.35);
+      box-shadow: var(--shadow);
+    }
+    .share-card.filler {
+      border-style: dashed;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .share-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 600;
+    }
+    .share-head .tag {
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(139,92,246,0.14);
+      border: 1px solid rgba(139,92,246,0.3);
+    }
+    .share-card h3 { font-size: 1.15rem; letter-spacing: -0.01em; line-height: 1.3; }
+    .share-card p { color: var(--muted); margin: 0; font-size: 0.95rem; flex: 1; }
+    .share-card .share-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .share-models {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .share-models .chip {
+      font-size: 0.72rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+    }
+
+    /* ---------- Mycelio CTA band ---------- */
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      padding: 56px 40px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(139,92,246,0.3), transparent 55%),
+        radial-gradient(circle at 75% 90%, rgba(110,231,249,0.2), transparent 55%),
+        linear-gradient(160deg, #161033, #0a0e1c);
+      border: 1px solid rgba(139,92,246,0.25);
+      box-shadow: var(--shadow-lg);
+    }
+    .cta-band h2 { margin-bottom: 12px; }
+    .cta-band p { color: var(--muted); max-width: 52ch; margin: 0 auto 26px; font-size: 1.08rem; }
+    .cta-band .hero-actions { justify-content: center; }
+
     /* ---------- Lightbox ---------- */
     .lightbox {
       position: fixed;
@@ -1162,7 +1520,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
-      .phone-mock, .phone-frame, .mycelio-orb, .logo-bubble { animation: none; }
+      .phone-mock, .phone-frame, .mycelio-orb, .logo-bubble, .monitor .browser-frame { animation: none; }
     }
 
     /* ---------- Responsive ---------- */
@@ -1173,7 +1531,11 @@
       .two-up,
       .apps-grid,
       .philosophy,
-      .footer-grid {
+      .footer-grid,
+      .flow,
+      .showcase,
+      .cap-grid,
+      .share-grid {
         grid-template-columns: 1fr;
       }
       .footer-grid { gap: 28px; }
@@ -1183,10 +1545,15 @@
       .phones-stage { max-width: 380px; margin-top: 20px; }
       .logos-stage { max-width: 340px; margin-top: 20px; }
       .app-copy ul { grid-template-columns: 1fr; }
+      .monitor { margin-top: 28px; }
+      .showcase.flip .showcase-text { order: 1; }
+      .showcase.flip .showcase-media { order: 2; }
+      .flow-arrow { display: none; }
     }
     @media (max-width: 560px) {
       .brand span:last-child { display: none; }
       .lede { font-size: 1.02rem; }
+      .cta-band { padding: 40px 22px; }
     }
   </style>
 </head>
@@ -1322,7 +1689,7 @@
             <div class="app-tile-pills">
               <span class="pill">Multi-model</span>
               <span class="pill">Prompt tuning</span>
-              <span class="pill accent">Coming soon</span>
+              <span class="pill accent">Now live</span>
             </div>
             <span class="app-tile-cta">Learn more <span class="arrow">→</span></span>
           </button>
@@ -1592,29 +1959,286 @@
 
   <!-- ============ MYCELIO VIEW ============ -->
   <section class="view" id="view-mycelio">
+
+    <!-- Hero with monitor mockup -->
     <section class="hero">
       <div class="container artifex-hero-grid">
         <div class="reveal">
-          <span class="coming-pill"><span class="dot"></span> Coming Soon</span>
+          <span class="live-pill"><span class="dot"></span> Live on web &amp; Android</span>
           <h1 class="display">
             The right model.<br>
             The right <em class="warm">prompt</em>.
           </h1>
           <p class="lede">
-            Mycelio connects you to the best AI models and optimizes every prompt behind the
-            scenes — so you stop fighting with phrasing and start getting answers that land.
-            More details coming soon.
+            Mycelio optimizes every prompt behind the scenes and routes it to the best AI model
+            for the job — so you stop fighting with phrasing and start getting richer, more
+            accurate answers with less effort.
           </p>
           <div class="hero-actions">
-            <button class="button secondary" data-nav="overview">Back to overview</button>
+            <a class="button primary" href="https://www.mycelioai.app" target="_blank" rel="noreferrer">
+              Open Mycelio <span class="arrow">→</span>
+            </a>
+            <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.kossapplications.mycelio" target="_blank" rel="noreferrer">
+              Get it on Google Play
+            </a>
           </div>
         </div>
 
         <div class="reveal delay-1" aria-hidden="true">
-          <div class="phone-frame mycelio">
-            <div class="screen">
-              <img src="Mycelio_dashboard.jpg" alt="Mycelio dashboard" />
+          <div class="monitor">
+            <div class="browser-frame glow-violet">
+              <div class="browser-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-url">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  mycelioai.app
+                </div>
+              </div>
+              <div class="browser-screen">
+                <img src="web_images_mycelio/dashboard.png" alt="Mycelio dashboard" />
+              </div>
             </div>
+            <div class="monitor-stand"></div>
+            <div class="monitor-base"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="margin-bottom: 28px;">
+          <h2>How Mycelio <em>works</em>.</h2>
+          <p class="lede" style="margin-top: 10px;">Three steps happen the moment you hit send.</p>
+        </div>
+        <div class="flow">
+          <div class="flow-card reveal delay-1">
+            <span class="step-num">1</span>
+            <h3>You write a prompt</h3>
+            <p>Type your idea however it comes out — rough, short, or messy. No prompt-engineering skills required.</p>
+          </div>
+          <div class="flow-arrow" style="left: 32.5%;">→</div>
+          <div class="flow-card reveal delay-2">
+            <span class="step-num">2</span>
+            <h3>We optimize it</h3>
+            <p>Mycelio rewrites your prompt into a clear, expert-level instruction designed to pull the best possible answer.</p>
+          </div>
+          <div class="flow-arrow" style="left: 66%;">→</div>
+          <div class="flow-card reveal delay-3">
+            <span class="step-num">3</span>
+            <h3>We route to the best model</h3>
+            <p>It picks the ideal model for your task — or you choose — across Anthropic, OpenAI, Google, DeepSeek and more.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prompt optimization showcase -->
+    <section class="section">
+      <div class="container">
+        <div class="showcase reveal">
+          <div class="showcase-text">
+            <h3>From rough idea to <em>expert prompt</em>.</h3>
+            <p>
+              Most people never get the most out of AI because writing a great prompt is hard.
+              Mycelio does it for you — expanding your request with the context, structure, and
+              detail that top results require.
+            </p>
+            <ul class="showcase-list">
+              <li>Turns one-line asks into rich, structured prompts</li>
+              <li>Adds the context models need to respond accurately</li>
+              <li>See exactly what was optimized before it runs</li>
+            </ul>
+          </div>
+          <div class="showcase-media">
+            <div class="browser-frame glow-violet">
+              <div class="browser-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-url">mycelioai.app/chat</div>
+              </div>
+              <div class="browser-screen">
+                <img src="web_images_mycelio/prompt_optimization.png" alt="Prompt optimization in Mycelio" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Model routing showcase -->
+    <section class="section">
+      <div class="container">
+        <div class="showcase flip reveal">
+          <div class="showcase-text">
+            <h3>One prompt. <em>Every model.</em></h3>
+            <p>
+              Different models are great at different things. Mycelio routes each prompt to the
+              best fit automatically — or run the same prompt across several models and compare
+              answers side by side.
+            </p>
+            <ul class="showcase-list">
+              <li>Auto-routing picks the best model for each task</li>
+              <li>Compare responses across models in one chat</li>
+              <li>Switch models mid-conversation, anytime</li>
+            </ul>
+          </div>
+          <div class="showcase-media">
+            <div class="browser-frame glow-cyan">
+              <div class="browser-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-url">mycelioai.app/chat</div>
+              </div>
+              <div class="browser-screen">
+                <img src="web_images_mycelio/multiple_models.png" alt="Multiple models answering one prompt" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase reveal">
+          <div class="showcase-text">
+            <h3>A whole <em>catalog</em> of models.</h3>
+            <p>
+              Claude, GPT, Gemini, DeepSeek and more — all in one place, with transparent pricing.
+              Sort by cheapest, fastest, or smartest, and pick exactly what each job needs.
+            </p>
+            <ul class="showcase-list">
+              <li>Top models from every major provider</li>
+              <li>Sort by price, speed, or reasoning power</li>
+              <li>Clear per-token credit pricing, no surprises</li>
+            </ul>
+          </div>
+          <div class="showcase-media">
+            <div class="browser-frame glow-violet">
+              <div class="browser-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-url">mycelioai.app</div>
+              </div>
+              <div class="browser-screen">
+                <img src="web_images_mycelio/model_catalog.png" alt="Mycelio model catalog" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities grid -->
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="margin-bottom: 28px;">
+          <h2>More than a <em>chat box</em>.</h2>
+          <p class="lede" style="margin-top: 10px;">A full workspace built around getting better answers.</p>
+        </div>
+        <div class="cap-grid">
+          <div class="cap-card reveal delay-1">
+            <div class="cap-shot"><img src="web_images_mycelio/agents.png" alt="Mycelio agents" /></div>
+            <div class="cap-body">
+              <h3>Custom agents</h3>
+              <p>Build assistants with their own persona and model strategy. Smart-routed agents pick the best model for every message — in character.</p>
+            </div>
+          </div>
+          <div class="cap-card reveal delay-2">
+            <div class="cap-shot"><img src="web_images_mycelio/projects.png" alt="Mycelio projects" /></div>
+            <div class="cap-body">
+              <h3>Projects</h3>
+              <p>Group related chats and give every conversation shared context — goals, constraints, and background that carry across the project.</p>
+            </div>
+          </div>
+          <div class="cap-card reveal delay-3">
+            <div class="cap-shot"><img src="web_images_mycelio/image_generation.png" alt="Mycelio image generation" /></div>
+            <div class="cap-body">
+              <h3>Image generation</h3>
+              <p>Generate and edit images right alongside your chats, with everything saved to your gallery for easy reuse.</p>
+            </div>
+          </div>
+          <div class="cap-card reveal delay-1">
+            <div class="cap-shot"><img src="web_images_mycelio/notes.png" alt="Mycelio notes" /></div>
+            <div class="cap-body">
+              <h3>Notes &amp; memory</h3>
+              <p>Turn any chat into a clean, structured note. Mycelio remembers what matters so you don't repeat yourself.</p>
+            </div>
+          </div>
+          <div class="cap-card reveal delay-2">
+            <div class="cap-shot"><img src="web_images_mycelio/community.png" alt="Mycelio community" /></div>
+            <div class="cap-body">
+              <h3>Community</h3>
+              <p>Discover and share the best prompts, agents, and chats. Add a community agent to your workspace in one click.</p>
+            </div>
+          </div>
+          <div class="cap-card reveal delay-3">
+            <div class="cap-shot"><img src="web_images_mycelio/dashboard.png" alt="Mycelio dashboard" /></div>
+            <div class="cap-body">
+              <h3>One clean dashboard</h3>
+              <p>Track optimized messages, your best-matched model, and usage at a glance — then jump back into any conversation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shared examples -->
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="margin-bottom: 28px;">
+          <h2>See it <em>in action</em>.</h2>
+          <p class="lede" style="margin-top: 10px;">Real, shareable Mycelio chats — open them and explore the full conversation.</p>
+        </div>
+        <div class="share-grid">
+          <a class="share-card reveal delay-1" href="https://www.mycelioai.app/share/hEAAEQsaNVm3FlCWGaco" target="_blank" rel="noreferrer">
+            <div class="share-head"><span class="tag">Shared chat</span></div>
+            <h3>Prompt optimization &amp; Associate Product Management roles</h3>
+            <p>A deep, structured guide on prompt engineering and breaking into APM roles — built from a single rough question.</p>
+            <div class="share-models">
+              <span class="chip">Optimized prompt</span>
+              <span class="chip">Smart-routed</span>
+            </div>
+            <span class="share-cta">Open shared chat <span class="arrow">→</span></span>
+          </a>
+
+          <a class="share-card reveal delay-2" href="https://www.mycelioai.app/share/XM52xXthI7DmN0Mjd75G" target="_blank" rel="noreferrer">
+            <div class="share-head"><span class="tag">Shared chat</span></div>
+            <h3>A detailed guide to landing a DevOps Engineering role</h3>
+            <p>A comprehensive, accurate roadmap into DevOps — the kind of answer that normally takes hours of back-and-forth.</p>
+            <div class="share-models">
+              <span class="chip">Optimized prompt</span>
+              <span class="chip">Smart-routed</span>
+            </div>
+            <span class="share-cta">Open shared chat <span class="arrow">→</span></span>
+          </a>
+
+          <!-- FILLER: replace href + copy when you send more shared links -->
+          <div class="share-card filler reveal delay-1">
+            <div class="share-head"><span class="tag">Coming soon</span></div>
+            <h3>More example chats on the way</h3>
+            <p>Placeholder — send me another shared link and a one-line description and I'll drop it in here.</p>
+            <span class="share-cta">Example slot</span>
+          </div>
+
+          <div class="share-card filler reveal delay-2">
+            <div class="share-head"><span class="tag">Coming soon</span></div>
+            <h3>More example chats on the way</h3>
+            <p>Placeholder — send me another shared link and a one-line description and I'll drop it in here.</p>
+            <span class="share-cta">Example slot</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h2>Get better answers, <em>with less effort</em>.</h2>
+          <p>Try Mycelio free on the web, or take it with you on Android. Better prompts and the right model — automatically.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://www.mycelioai.app" target="_blank" rel="noreferrer">
+              Open Mycelio <span class="arrow">→</span>
+            </a>
+            <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.kossapplications.mycelio" target="_blank" rel="noreferrer">
+              Get it on Google Play
+            </a>
           </div>
         </div>
       </div>
@@ -1764,7 +2388,7 @@
   }
 
   // ---- Lightbox ----
-  const mediaElements = document.querySelectorAll('.shot img, .media-frame img, .media-frame video');
+  const mediaElements = document.querySelectorAll('.shot img, .media-frame img, .media-frame video, .browser-screen img, .cap-shot img');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxVid = document.getElementById('lightbox-vid');
